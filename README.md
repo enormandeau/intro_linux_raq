@@ -15,15 +15,15 @@ Cette formation a pour but d'introduire à l'utilisation de systèmes Linux ou s
 - Exercices à faire chaque semaine (~30 min)
 - Liens pour en apprendre plus
 
-# Cours
-Plan de cours provisoire :
+# Plan de cours (sujet à changements)
 
 ## Semaine 1
 <!---
 Document de cours (Version non-terminée!) : [intro_linux_raq_semaine_01.pdf](https://github.com/enormandeau/intro_linux_raq/blob/master/02_cours/cours_01/intro_linux_raq_semaine_01.pdf?raw=true)
 -->
-- Intro et connection au serveur du cours
-- Le terminal (Linux, MacOS, Windows avec putty.exe)
+- Introduction à Linux
+- Connection au serveur Linux utilisé durant le cours
+- Introduction au terminal (Linux, MacOS, Windows avec putty.exe)
 - Commandes de base (ls, cd...)
 
 ## Semaine 2
