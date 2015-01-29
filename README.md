@@ -19,7 +19,7 @@ Cette formation a pour but d'introduire à l'utilisation de systèmes Linux ou s
 Plan de cours provisoire :
 
 ## Semaine 1
-Document de cours (Version non-terminée!) : [intro_linux_raq_semaine_01.pdf](https://github.com/enormandeau/intro_linux_raq/blob/master/02_cours/cours_01/intro_linux_raq_semaine_01.pdf?raw=true)
+%%Document de cours (Version non-terminée!) : [intro_linux_raq_semaine_01.pdf](https://github.com/enormandeau/intro_linux_raq/blob/master/02_cours/cours_01/intro_linux_raq_semaine_01.pdf?raw=true)
 - Intro et connection au serveur du cours
 - Le terminal (Linux, MacOS, Windows avec putty.exe)
 - Commandes de base (ls, cd...)
