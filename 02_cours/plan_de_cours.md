@@ -43,6 +43,7 @@
 - Lancer des programmes
 
 ### Autres idées
+- aliases
 - Screen et tmux
 - Cheatsheet
 
