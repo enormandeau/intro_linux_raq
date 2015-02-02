@@ -1,10 +1,25 @@
 # Introduction à Linux
-Formation d'introduction à Linux offerte aux membres de Ressources Aquatiques Québec (RAQ) à l'hiver 2015.
+Formation d'introduction à Linux offerte aux membres de Ressources Aquatiques
+Québec (RAQ) à l'hiver 2015.
 
 # Description
-Les besoins en calculs en science, incluant en biologie et en bioinformatique, sont de plus en plus importants. Afin de pouvoir analyser ces quantités d'informations, il faut avoir accès à des ordinateurs dédiés et à des programmes d'analyses puissants. Depuis quelques décénies, ce genre de capacité de calcul est disponible sur des serveurs de calculs UNIX ou, plus récemment, des serveurs Linux. De plus en plus, les logiciels d'analyse bioinformatique de pointe sont programmés pour être utiliser sur des systèmes UNIX-compatible, comme Linux et MacOSX.
+Les besoins en calculs en science, incluant en biologie et en bioinformatique,
+sont de plus en plus importants. Afin de pouvoir analyser ces quantités
+d'informations, il faut avoir accès à des ordinateurs dédiés et à des
+programmes d'analyses puissants. Depuis quelques décénies, ce genre de capacité
+de calcul est disponible sur des serveurs de calculs UNIX ou, plus récemment,
+des serveurs Linux. De plus en plus, les logiciels d'analyse bioinformatique de
+pointe sont programmés pour être utiliser sur des systèmes UNIX-compatible,
+comme Linux et MacOSX.
 
-Cette formation a pour but d'introduire à l'utilisation de systèmes Linux ou similaires dans le cadre de la recherche scientifique, plus spécifiquement en bioinformatique. Tout au long de la session, nous utiliserons le terminal pour se connecter à des serveurs, apprendre les commandes de bases, écrire des scripts, installer des programmes et lancer des analyses. Ces notions seront cruciales pour tous ceux qui auront à utiliser des serveurs de calcul pour effectuer leurs analyses bioinformatiques dans le futur. Il s'agit également de connaissances très pertinentes à avoir à son CV à l'ère de la génomique.
+Cette formation a pour but d'introduire à l'utilisation de systèmes Linux ou
+similaires dans le cadre de la recherche scientifique, plus spécifiquement en
+bioinformatique. Tout au long de la session, nous utiliserons le terminal pour
+se connecter à des serveurs, apprendre les commandes de bases, écrire des
+scripts, installer des programmes et lancer des analyses. Ces notions seront
+cruciales pour tous ceux qui auront à utiliser des serveurs de calcul pour
+effectuer leurs analyses bioinformatiques dans le futur. Il s'agit également de
+connaissances très pertinentes à avoir à son CV à l'ère de la génomique.
 
 ## Format
 - Deux heures de présentation vidéo par semaine
