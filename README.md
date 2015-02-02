@@ -1,6 +1,6 @@
 # Introduction à Linux
-Formation d'introduction à Linux offerte aux membres de Ressources Aquatiques
-Québec (RAQ) à l'hiver 2015.
+Formation d'introduction à Linux offerte aux membres du groupe **Ressources
+Aquatiques Québec** (RAQ) à l'hiver 2015.
 
 # Description
 Les besoins en calculs en science, incluant en biologie et en bioinformatique,
@@ -15,14 +15,15 @@ comme Linux et MacOSX.
 Cette formation a pour but d'introduire à l'utilisation de systèmes Linux ou
 similaires dans le cadre de la recherche scientifique, plus spécifiquement en
 bioinformatique. Tout au long de la session, nous utiliserons le terminal pour
-se connecter à des serveurs, apprendre les commandes de bases, écrire des
+se connecter à un serveur Linux, apprendre les commandes de bases, écrire des
 scripts, installer des programmes et lancer des analyses. Ces notions seront
-cruciales pour tous ceux qui auront à utiliser des serveurs de calcul pour
-effectuer leurs analyses bioinformatiques dans le futur. Il s'agit également de
-connaissances très pertinentes à avoir à son CV à l'ère de la génomique.
+essentielles pour tous ceux qui auront à utiliser des serveurs de calcul pour
+effectuer leurs analyses bioinformatiques sur des systèmes Linux ou Mac dans le
+futur. Il s'agit également de connaissances très pertinentes à avoir à son CV à
+l'ère de la génomique.
 
 ## Format
-- Deux heures de présentation vidéo par semaine
+- Deux heures de présentation par semaine
 - Environ 4-6 semaines
 - Questions interactives
 - Exercices durant les présentations
@@ -33,11 +34,13 @@ connaissances très pertinentes à avoir à son CV à l'ère de la génomique.
 # Plan de cours (sujet à changements)
 
 ## Semaine 1
-Document de cours (Version non-terminée!) : [intro_linux_raq_semaine_01.pdf](https://github.com/enormandeau/intro_linux_raq/blob/master/02_cours/cours_01/intro_linux_raq_semaine_01.pdf?raw=true)
+Document de cours (**Version NON-terminée!**) :
+[intro_linux_raq_semaine_01.pdf](https://github.com/enormandeau/intro_linux_raq/blob/master/02_cours/cours_01/intro_linux_raq_semaine_01.pdf?raw=true)
 - Introduction à Linux
 - Connection au serveur Linux utilisé durant le cours
 - Introduction au terminal (Linux, MacOS, Windows avec putty.exe)
 - Commandes de base
+- Exercices à faire avant la semaine prochaine
 
 ## Semaine 2
 - Commandes pour fichiers et dossiers (cp, mv, rm...)
