@@ -318,6 +318,47 @@ liste le contenu:
     ls -lh
 ```
 
+Pour copier des fichiers, on utiliser la commande **`cp`** suivie du nom du
+fichier à copier et puis du nom du nouveau fichier où le copier. Afin de copier
+un dossier, il faut utiliser l'option **`-r`** :
+
+```bash
+    cp fichier_01.txt copie_fichier_01.txt
+    cp -r dossier_01 copie_dossier_01
+
+    ls -lh
+```
+
+Pour déplacer ou renomer des fichiers ou dossiers, on utilise la commande
+**`mv`** :
+
+```bash
+    mv copie_fichier_01.txt fichier_02.txt
+    mv copie_dossier_01 dossier_02
+
+    ls -lh
+```
+
+Finalement, pour effacer un fichier ou un dossier, on utilise la commande
+**`rm`**. Pour les dossiers, il faut ajouter l'option **`-r`**, comme pour la
+commande **`cp`**.
+
+```bash
+    rm fichier_02.txt
+    rm -r dossier_02
+
+    ls -lh
+```
+
+Pour créer des fichiers et des dossiers vides, on utilise les commandes
+**`touch`** et **`mkdir`** :
+
+```bash
+    touch nouveau_fichier.txt  # Extension .txt pas nécessaire
+    mkdir nouveau_dossier
+
+    ls -lh
+```
 
 \newpage
 
@@ -344,7 +385,9 @@ Voici une courte liste des commandes que nous avons utilisé aujourd'hui :
 - **`touch`** : Créer (ou mettre à jour) un fichier
 - **`mkdir`** : Créer un dossier
 
-## 3.4 Autres commandes utiles
+# Pour prochain cours
+
+## Autres commandes utiles
 - **`history`** : Lister les commandes utilisées
 - **`man`** : Lire le manuel d'une commande
 - **`echo`** : Afficher du texte à l'écran
@@ -352,9 +395,6 @@ Voici une courte liste des commandes que nous avons utilisé aujourd'hui :
 - **`sleep`** : Attendre pour un lapse de temps (secondes, minutes...)
 - **`Ctrl-C`** : Canceller une commande
 - **`Ctrl-D`** : Sortir d'un programme ou arrêter le terminal
-
-
-# Pour prochain cours
 
 cd . .. ~ - /
 alias (eg: ll)
