@@ -1,10 +1,9 @@
 # TODO
 ## Cours 01
-- Créer utilisateurs
+- Créer utilisateurs (login/passwd)
   - Envoyer aux participants
   - Envoyer une batch à Renée
   - Imprimer une batch pour l'IBIS
-- Créer fichiers et dossiers
-- Créer exercices
+- Créer exercices pour cours 01
 - Ajouter Cheatsheet
 
