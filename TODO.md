@@ -5,7 +5,6 @@
   - Envoyer une batch à Renée
   - Imprimer une batch pour l'IBIS
 - Créer fichiers et dossiers
-- Créer liste de commandes
 - Créer exercices
 - Ajouter Cheatsheet
 
