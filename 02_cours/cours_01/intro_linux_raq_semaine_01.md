@@ -1,5 +1,4 @@
 # Introduction à Linux RAQ - Cours 01
-\normalsize
 Eric Normandeau - 2015-02-03  
 
 # 0 - Plan de cours
