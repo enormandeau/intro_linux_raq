@@ -26,23 +26,29 @@
 - Intro
 - Connection au serveur du cours
 - Le terminal (Linux, MacOS, Windows avec putty.exe)
-- Commandes de base (ls, cd...)
+  - Commandes de base (ls, cd...)
+  - Commandes pour fichiers (cp, mv, rm...)
+- Exercices
 
 ### Semaine 2
-- Commandes pour fichiers (cp, mv, rm...)
-- Commandes pour traiter texte (grep, perl...)
 
 ### Semaine 3
+
+### Semaine 4
+
+### Semaine 5
+
+### Semaine 6
+
+### Idées pour cours
+- Commandes utiles (man, history, top...)
+- Commandes pour traiter texte (grep, perl...)
 - Pipelines
 - Commandes pour transférer données (scp, rsync, wget...)
 - Éditer des fichiers (joe, nano, vi...)
-
-### Semaine 4
 - Créer un script bash
 - Installer des programmes sur un serveur
 - Lancer des programmes
-
-### Autres idées
 - aliases
 - Screen et tmux
 - Cheatsheet
