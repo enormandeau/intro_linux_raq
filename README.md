@@ -34,7 +34,7 @@ l'ère de la génomique.
 # Plan de cours (sujet à changements)
 
 ## Semaine 1
-Document de cours (**Version NON-terminée!**) :
+Document de cours :
 [intro_linux_raq_semaine_01.pdf](https://github.com/enormandeau/intro_linux_raq/blob/master/02_cours/cours_01/intro_linux_raq_semaine_01.pdf?raw=true)
 - Introduction à Linux
 - Connection au serveur Linux utilisé durant le cours

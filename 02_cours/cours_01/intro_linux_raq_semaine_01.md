@@ -8,7 +8,7 @@ Eric Normandeau - 2015-02-03
 1. Terminal et commandes de base
 1. Mot de la fin
 1. Exercices
-1. Liste de commandes importantes
+1. Liste des commandes importantes
 
 # 1 - Introduction
 ## 1.1 - À propos du cours
@@ -373,6 +373,11 @@ commande **`cp`**.
     ls -lh
 ```
 
+**NOTE IMPORTANTE**&nbsp;: Lorsqu'on utilise la commande **`rm`**, **on ne peut
+pas revenir en arrière!** Le(s) fichier(s) ou dossier(s) sont effacés de façon
+permanente. On ne peut pas les récupérer dans la poubelle. **On doit donc être
+extrèmement prudent en utilisant la commande `rm`!**
+
 Pour créer des fichiers et des dossiers vides, on utilise les commandes
 **`touch`** et **`mkdir`**&nbsp;:
 
@@ -389,6 +394,7 @@ Pour créer des fichiers et des dossiers vides, on utilise les commandes
 ## 4.1 - Aujourd'hui, nous avons vu&nbsp;:
 
 - Comment se connecter à un serveur Linux
+- Les bases du terminal **`bash`**
 - Comment naviguer dans des dossiers
 - Comment afficher et lire des fichiers
 - Comment manipuler des fichiers (copier, déplacer, renommer, effacer)
@@ -415,7 +421,10 @@ suggestions en note pour tenter d'améliorer le cours.
 - Afficher le dossier présent (commande&nbsp;: **`pwd`**)
 - Se déplacer à la racine du système (racine&nbsp;: **`/`**, commande&nbsp;: **`cd`**)
 - Afficher le contenu du dossier (commande&nbsp;: **`ls`**)
-- Explorer un peu le dossier (commandes&nbsp;: **`cd`**, **`ls`**, **`pwd`**)
+- Explorer un peu les dossier (commandes&nbsp;: **`cd`**, **`ls`**, **`pwd`**)
+- Se déplacer dans le dossier **`/home`** (commande&nbsp;: **`cd`**)
+- Afficher le contenu du dossier (commande&nbsp;: **`ls`**)
+- Essayer de se déplacer dans le dossier d'un autre utilisateur (commande&nbsp;: **`cd`**)
 - Retourner dans votre dossier d'utilisateur  
   (dossier&nbsp;: **`/home/username`**, ou **`~`**, commande&nbsp;: **`cd`**)
 
@@ -428,23 +437,23 @@ suggestions en note pour tenter d'améliorer le cours.
 - Créer un nouveau fichier nommé **`mon_fichier.txt`** (commande&nbsp;: **`touch`**)
 - Faire une copie de ce fichier nommée **`copie_mon_fichier.txt`** (commande&nbsp;: **`cp`**)
 - Renommer cette copie en **`fichier_02.txt`** (commande&nbsp;: **`mv`**)
-- Effacer la première copie (**`mon_fichier.txt`**, commande&nbsp;: **`rm`**)
+- Effacer ce fichier (**`fichier_02.txt`**, commande&nbsp;: **`rm`**)
 
 ## 5.4 - Dossiers
 NOTE: Ne pas oublier que certaines commandes nécessitent l'option **`-r`**
 quand on manipule des dossiers.
 
-- Créer un nouveau dossier nommé **`dossier_01`** (commande&nbsp;: **`mkdir`**)
-- Copier le fichier **`fichier_01.txt`** dans le nouveau dossier (commande&nbsp;: **`cp`**)
-- Faire une copie de ce dossier nommée **`nouveau_dossier`** (commande&nbsp;: **`cp`**)
-- Renommer la nouvelle copie **`dossier_02`** (commande&nbsp;: **`mv`**)
+- Copier le fichier **`fichier_01.txt`** dans **`dossier_01`** (commande&nbsp;: **`cp`**)
+- Faire une copie de ce dossier appelée **`nouveau_dossier`** (commande&nbsp;: **`cp`**)
+- Renommer **`nouveau_dossier`** en  **`dossier_02`** (commande&nbsp;: **`mv`**)
+- Afficher le contenu de **`dossier_02`** (commande&nbsp;: **`ls`**)
 - Effacer **`dossier_02`** (commande&nbsp;: **`rm`**)
 
 
 \newpage
 
 
-## 6 - Liste de commandes importantes
+## 6 - Liste des commandes importantes
 Voici une courte liste des commandes que nous avons utilisée aujourd'hui. Entre
 parenthèses, vous trouverez le nom en anglais de la commande (pour vous aider à
 retenir la commande). Entre crochets, vous trouverez les options les plus
