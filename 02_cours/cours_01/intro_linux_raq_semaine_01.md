@@ -7,6 +7,8 @@ Eric Normandeau - 2015-02-02
 1. Introduction
 1. Connection au serveur Linux
 1. Terminal et commandes de base
+1. Mot de la fin
+1. Exercices
 1. Liste de commandes importantes
 
 # 1 - Introduction
@@ -17,7 +19,7 @@ Eric Normandeau - 2015-02-02
 - Semi-magistral avec exercices (apportez votre laptop)
 - N'hésitez pas à poser des questions durant le cours !
 - Donné dans la salle Hydro-Québec à l'Université Laval (Québec)
-- Disponible en direct avec Google Hangout
+- Disponible en direct avec Google Hangout à l'UQAR
 - Disponible en différé sur
   [YouTube](https://www.youtube.com/user/maroonedmorlock/videos)
 - Notes de cours disponibles sur
@@ -97,6 +99,7 @@ Durant la formation, nous allons tenter de faire de courtes analyses avec des s�
 - Rechercher des séquences similaires avec **`blast`**
 - Assembler des génomes bactériens
 
+
 \newpage
 
 
@@ -154,6 +157,7 @@ ajustez la taille à 11 ou 12, et appuyez sur **`OK`**. Retournez dans l'onglet
 maintenant sur **`Save`** pour sauvegarder les options que nous venons de
 choisir. Vous êtes maintenant prêts à utiliser **`putty.exe`**.
 
+
 \newpage
 
 
@@ -206,6 +210,7 @@ Il existe des commandes de base qui permettent d'explorer et de manipuler des
 fichiers et des dossiers. Nous allons commencer à apprendre les plus communes
 aujourd'hui.
 
+## Premiers pas
 Une fois connecté, nous voulons savoir où nous sommes. La commande **`pwd`**
 (pour *present working directory*) nous indique le chemin (path) où nous nous
 trouvons :
@@ -237,6 +242,7 @@ Testez-le en tappant **`cat mot<tab>`**. Le nom du fichier devrait se compléter
 automatiquement. Cette façon d'écrire les noms de fichiers est préférée car
 elle sauve du temps et évite des erreurs de frappe.
 
+## Importer matériel du cours 01
 Afin de pouvoir tester les autres commandes, nous allons avoir besoin de plus
 de dossiers et de fichiers. Nous allons donc copier un dossier déjà préparer
 pour le cours 01 avec la commande **`cp`**, que nous allons revoir plus tard :
@@ -281,6 +287,7 @@ la commande **`cat`** :
     cat README.txt  # N'oubliez pas d'utiliser <tab>
 ```
 
+## Alice au Pays de Merveilles
 Nous allons nous déplacer dans le dossier **`00_alice`** et regarder le contenu
 :
 
@@ -303,8 +310,9 @@ visualiser en utilisant les commandes **`cat`**, **`head`**, **`tail`** et
     less alice.txt  # Pour lire tout le fichier
 ```
 
-Nous allons maintenant créer, déplacer, renommer et effacer des fichiers et des
-dossiers. Pour cela, nous allons nous déplacer dans le dossier
+## Jongler avec des fichiers
+Nous allons maintenant **créer**, **déplacer**, **renommer **et **effacer **des
+fichiers et des dossiers. Pour cela, nous allons nous déplacer dans le dossier
 **`~/cours_01/02_fichiers_et_dossiers`**. Chaque fois que vous voyez le symbole
 **`~`** dans un chemin de dossier, il fait référence à votre dossier
 d'utilisateur dans **`/home/username`**. Par exemple, pour l'utilisateur
@@ -360,16 +368,73 @@ Pour créer des fichiers et des dossiers vides, on utilise les commandes
     ls -lh
 ```
 
+# 4 - Mot de la fin
+Aujourd'hui, nous avons vu :
+
+- Comment se connecter à un serveur Linux
+- Comment naviguer dans des dossier
+- Comment afficher et lire des fichiers
+- Comment manipuler des fichiers (copier, déplacer, renomer, effacer)
+
+Lors du prochain cours, nous allons poursuivre notre apprentissage des
+commandes de base qui nous servirons à lancer plus tard des analyses.
+
 \newpage
 
+# 5 - Exercices
 
-## 4 - Liste de commandes importantes
+## Connection
+- Se connecter au serveur (**`ssh`**)
+
+## Orientation
+- Afficher le dossier courrant (commande : **`pwd`**)
+- Se déplacer à la racine du système (racine : **`/`**, commande : **`cd`**)
+- Affiche le contenu du dossier (commande : **`ls`**)
+- Explorer un peu (commandes : **`cd`**, **`ls`**, **`pwd`**)
+- Retourner dans votre dossier d'utilisateur  
+  (dossier : **`/home/username`**, commande : **`cd`**)
+
+## Fichiers
+- Effacer le dossier du cours (dossier : **`cours_01`**, commande : **`rm`**)
+- Copier le dossier du cours à nouveau dans votre dossier utilisateur  
+  (dossier : **`/cours_intro_linux/cours_01`**, commande : **`cp -r`**)
+- Se déplacer dans le dossier **`~/cours_01/02_fichiers_et_dossiers`**  
+  (commande : **`cd`**)
+- Afficher le contenu du fichier **`fichier_01.txt`** (commande : **`cat`**)
+- Créer un nouveau fichier nommé **`mon_fichier.txt`** (commande : **`touch`**)
+- Faire une copie de ce fichié nommée **`copie_mon_fichier.txt`**  
+  (commande : **`cp`**)
+- Renommer cette copie en **`fichier_02.txt`** (commande : **`mv`**)
+- Effacer la première copie (**`mon_fichier.txt`**, commande : **`rm`**)
+
+## Dossiers
+NOTE: Ne pas oublier que certaines commandes nécessite l'option **`-r`** quand
+on manipule des dossiers.
+
+- Créer un nouveau dossier nommé **`dossier_01`** (commande : **`mkdir`**)
+- Ajouter copier le fichier **`fichier_01.txt`** dans le nouveau dossier  
+  (commande : **`cp`**)
+- Faire une copie de ce dossier nommée **`nouveau_dossier`**  
+  (commande : **`cp`**)
+- Renommer la nouvelle copie **`dossier_02`** (commande : **`mv`**)
+- Effacer **`dossier_02`** (commande : **`rm`**)
+
+
+
+
+-  (**``**)
+-  (**``**)
+
+
+
+
+## 6 - Liste de commandes importantes
 Voici une courte liste des commandes que nous avons utilisé aujourd'hui :
 
 ## Explorer des dossiers
 - **`ls`** : Lister les fichiers et les dossiers (list) `[-l -h]`
 - **`pwd`** : Afficher le dossier courant (present working directory)
-- **`cd`** : Changer de dossier (change directory) `[. .. ~ -]`
+- **`cd`** : Changer de dossier (change directory) `[. .. ~ - /]`
 
 ## Explorer des fichiers
 - **`wc`** : Afficher le nombre de lignes d'un fichier `[-l]`
