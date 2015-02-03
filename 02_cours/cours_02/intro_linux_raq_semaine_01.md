@@ -1,5 +1,4 @@
 # Introduction à Linux RAQ - Cours 02
-\large  
 Eric Normandeau - 2015-02-02  
 (**Version TRÈS PRÉLIMINAIRE**)
 (**Version NON terminée**)
