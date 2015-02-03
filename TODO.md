@@ -1,6 +1,7 @@
 # TODO
 ## Cours 01
-- Créer exercices pour cours 01
+- Tester exercices pour cours 01
+- Parler des dossiers spéciaux [. .. ~ / -]
 - Ajouter Cheatsheet
 
 ## Cours 02

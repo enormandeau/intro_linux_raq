@@ -43,25 +43,18 @@ Document de cours (**Version NON-terminée!**) :
 - Exercices à faire avant la semaine prochaine
 
 ## Semaine 2
+- À venir
+
+## Idées pour cours futurs
 - Commandes pour fichiers et dossiers (cp, mv, rm...)
 - Commandes pour traiter texte (grep, perl...)
-
-## Semaine 3
 - Pipelines
 - Commandes pour transférer données (scp, rsync, wget...)
 - Éditer des fichiers (joe, nano, vi...)
-
-## Semaine 4
 - Boucles
 - Scripts bash
-
-## Semaine 4
 - Installer des programmes sur un serveur
 - Lancer des programmes
-
-## Semaine 5
 - Screen et tmux
-
-# Matériel supplémentaire
 - Cheatsheet
 
