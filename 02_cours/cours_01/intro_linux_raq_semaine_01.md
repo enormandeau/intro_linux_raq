@@ -8,7 +8,7 @@ Eric Normandeau - 2015-02-03
 1. Terminal et commandes de base
 1. Mot de la fin
 1. Exercices
-1. Liste des commandes importantes
+1. Liste de commandes importantes
 
 # 1 - Introduction
 ## 1.1 - À propos du cours
@@ -453,7 +453,7 @@ quand on manipule des dossiers.
 \newpage
 
 
-## 6 - Liste des commandes importantes
+## 6 - Liste de commandes importantes
 Voici une courte liste des commandes que nous avons utilisée aujourd'hui. Entre
 parenthèses, vous trouverez le nom en anglais de la commande (pour vous aider à
 retenir la commande). Entre crochets, vous trouverez les options les plus
