@@ -452,7 +452,7 @@ quand on manipule des dossiers.
 \newpage
 
 
-## 6 - Liste de commandes importantes
+# 6 - Liste de commandes importantes
 Voici une courte liste des commandes que nous avons utilisée aujourd'hui. Entre
 parenthèses, vous trouverez le nom en anglais de la commande (pour vous aider à
 retenir la commande). Entre crochets, vous trouverez les options les plus

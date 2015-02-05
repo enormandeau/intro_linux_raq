@@ -1,55 +1,41 @@
-# Formation Linux
+# Sujets pour cours
+## Global
+x Commandes utiles (man, history, top...)
+x Manipuler fichiers et dossiers (cp, mv, ls, mkdir...)
+- Transfère de données (See katak course for examples)
+  - scp, rsync, wget, curl, sftp
+- Permissions (chmod, chown)
+x Redirection
+x Pipelines
 
-## Pourquoi Linux?
-- Calculs demandant des ressources importantes
-- Automatiser des analyses qui doivent être répétées (100X, 1000X 10000X+)
-- Examples d'analyses
-- Systèmes UNIX (Linux, MacOS...) sont parfait pour ces tâches
-- La grande majorité des serveurs de calcul utilisent Linux
+## Manipuler texte
+- Trouver et modifier (grep, sed, awk, perl...)
+- Expressions régulières
+- Explorer séquences ADN (see exercices in `linux_part_3.pdf`)
 
-## Objectifs
-- Intro
-- Bases importantes
-- Apprentissage actif
-- Sources pour apprendre plus
-- Permettre d'utiliser Linux/MacOS pour des analyses bioinformatiques
-
-## Format
-- Deux heures de formation vidéo par semaine
-- Questions interactives (une personne par université)
-- Environ quatre semaines
-- Connection à un serveur Linux pour faire exercices
-- Exercices à faire chaque semaine (~30 min)
-
-## Contenu du cours
-### Semaine 1
-- Intro
-- Connection au serveur du cours
-- Le terminal (Linux, MacOS, Windows avec putty.exe)
-  - Commandes de base (ls, cd...)
-  - Commandes pour fichiers (cp, mv, rm...)
-- Exercices
-
-### Semaine 2
-
-### Semaine 3
-
-### Semaine 4
-
-### Semaine 5
-
-### Semaine 6
-
-### Idées pour cours
-- Commandes utiles (man, history, top...)
-- Commandes pour traiter texte (grep, perl...)
-- Pipelines
-- Commandes pour transférer données (scp, rsync, wget...)
-- Éditer des fichiers (joe, nano, vi...)
-- Créer un script bash
-- Installer des programmes sur un serveur
+## Scripts et programmes
+- Éditer des fichiers texte (joe, nano, vi...)
+- Créer un script bash (#!/bin/bash, chmod)
+- Installer des programmes (See katak course for examples)
+  - apt-cache search/show
+  - apt-get install
+  - ./configure, make, make install
+  - install `curl` from source
+  - PATH
 - Lancer des programmes
-- aliases
+
+## Config
+- Fichiers de config (.bashrc, .profile)
+- Aliases
+
+## Utilitaires
 - Screen et tmux
+
+## Misc
+- Formats Windows **`\r\n`**, Mac **`^M`** et Linux **`\n`**)
 - Cheatsheet
+- Résumé des commandes avec options utiles et exemples
+- Getting help (doc, forums, google)
+- Tous les serveurs sont différents
+- Soumettre des jobs sur des serveurs de calcul
 

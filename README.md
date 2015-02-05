@@ -45,16 +45,5 @@ Document de cours :
 ## Semaine 2
 - À venir
 
-## Idées pour cours futurs
-- Commandes pour fichiers et dossiers (cp, mv, rm...)
-- Commandes pour traiter texte (grep, perl...)
-- Pipelines
-- Commandes pour transférer données (scp, rsync, wget...)
-- Éditer des fichiers (joe, nano, vi...)
-- Boucles
-- Scripts bash
-- Installer des programmes sur un serveur
-- Lancer des programmes
-- Screen et tmux
-- Cheatsheet
-
+## Ressources
+- À venir
