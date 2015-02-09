@@ -1,6 +1,6 @@
 # Sujets
-- Commands
-- Using less (moving, searching, exiting)
+- Commandes
+- less (moving, searching, exiting)
 - Options
 - Redirection
 - Pipes

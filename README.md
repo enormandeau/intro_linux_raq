@@ -43,6 +43,17 @@ Document de cours :
 - Exercices à faire avant la semaine prochaine
 
 ## Semaine 2
+<!--
+Document de cours :
+[intro_linux_raq_semaine_02.pdf](https://github.com/enormandeau/intro_linux_raq/blob/master/02_cours/cours_02/intro_linux_raq_semaine_02.pdf?raw=true)
+-->
+- Dossiers importants
+- Plus de commandes utiles
+- Entrées et sorties de programmes
+- Création de pipelines avec les commandes
+- Exercices à faire avant la semaine prochaine
+
+## Semaine 3
 - À venir
 
 ## Ressources
