@@ -499,6 +499,13 @@ colonnes ou par position des caractères dans la ligne.
 - Les pipelines
 - Quelques commandes pour manipuler du texte
 
+Nous avons vu quelques commandes qui permettent de manipuler du texte mais pour
+l'instant nos capacités sont limitées par le fait que nous n'avons pas encore
+vu les expressions régulières (**`regular expressions`** ou **`regex`**) ni
+comment utiliser la commande **`perl`** pour rechercher et remplacer du texte.
+Ces deux outils seront au coeur du prochain cours. Il faudra alors bien
+maîtriser les commandes déjà vues ainsi que comment construire des pipelines.
+
 ## 6.2 - Au prochain cours, nous verrons&nbsp;:
 
 - Manipulation de texte plus avancée
