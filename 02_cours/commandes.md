@@ -24,15 +24,20 @@ x head
 x tail
 - diff
 - sort
+- uniq
 x cat
+- cut
 - perl
 - grep
 - sed
 - awk
 x wc
-- vi
-- joe
+- tr
+
+## Text editors
 - nano
+- joe
+- vi
 
 ## Compression
 - gunzip
@@ -50,9 +55,11 @@ x wc
 x history
 - passwd
 - screen
+- nohup
 x clear (Ctrl-L)
 - tmux
 - sudo
+- su
 - ping
 x echo
 - time
