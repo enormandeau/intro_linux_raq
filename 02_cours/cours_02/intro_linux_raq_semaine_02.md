@@ -6,7 +6,7 @@ Eric Normandeau - 2015-02-05
 
 1. Introduction
 1. Dossiers importants
-1. Commandes utiles
+1. Commandes système utiles
 1. Entrées et sorties
 1. Manipulation de texte
 1. Mot de la fin
@@ -33,6 +33,16 @@ manipuler des fichiers texte.
 
 Réponse aux questions relatives aux exercices de la semaine passée.
 
+# 1.2 - Importer le matériel du cours 02
+
+Nous allons copier un dossier déjà préparé pour le cours 02 avec la commande
+**`cp`**, que nous allons revoir plus tard&nbsp;:
+
+```bash
+    cd  # Pour retourner dans notre dossier d'utilisateur
+    cp -r /cours_intro_linux/cours_02 .
+```
+
 
 # 2 - Dossiers importants
 
@@ -47,7 +57,7 @@ dossiers système.
 - **`/`** : Le dossier racine du système.
 - **`-`** : Le dossier où vous vous trouviez juste précédemment.
 
-## 2.2 - Dossiers systèmes
+## 2.2 - Dossiers du système
 
 Il est intéressant de savoir un peu ce que contiennent les dossier qui se
 trouvent à la racine, mais ça n'est pas essentiel pour utiliser Linux.
@@ -72,7 +82,7 @@ trouvent à la racine, mais ça n'est pas essentiel pour utiliser Linux.
 - **`/var`** : Fichiers divers (logs, packages, bases de données...)
 
 
-# 3 - Commandes utiles
+# 3 - Commandes système utiles
 
 Certaines commandes nous rendent la vie plus facile. Elles ne nous permettent
 pas par elles-mêmes d'accomplir des tâches mais font en sorte qu'on peut être
@@ -87,7 +97,6 @@ commande **`grep`** que nous allons aborder plus loin pour trouver des
 commandes complexes que nous avons lancées dans le passé. Lancée seule et sans
 options, **`history`** n'est pas toujours très pratique si notre historique de
 commandes est long.
-
 
 ```bash
     history
@@ -122,20 +131,24 @@ La commande **`echo`** affiche le texte qu'on lui passe. Avec les bonnes
 options, on peut composer des messages à l'écran.
 
 ```bash
-    echo "Bienvenu au deuxième cours"  # Aucune option
-    echo -n "Nous sommes le "; date -I  # Le -n veut dire "no newline"
+    # Sans aucune option
+    echo "Bienvenu au deuxième cours"
+    
+    # Sans retour de ligne
+    echo -n "Nous sommes le "; date -I
 ```
 
-## 3.4 - La commande man
+## 3.5 - La commande man
 
 La commande **`man`** sert à consulter le manuel des commandes disponibles. Le
 manuel est affiché grâce à la commande **`less`**.
 
 ```bash
-    man echo  # Cherchez les options -n et -e
+    # Chercher les options '-n' et '-e'
+    man echo
 ```
 
-## 3.5 - La commande top
+## 3.6 - La commande top
 
 La commande **`top`** affiche les processus qui utilisent le plus de ressources
 sur le système. On peut trier les processus en fonction de leur utilisation de
@@ -151,12 +164,12 @@ lancés par votre utilisateur.
 Pour sortir de la commande **`top`**, vous pressez la touche **`q`**, commme
 pour sortir de la commane **`less`**.
 
-## 3.6 - La commande clear
+## 3.7 - La commande clear
 
 La commande **`clear`** permet de vider le terminal et de remettre le curseur
 en haut. On peut également utiliser **`Ctrl-L`** pour arriver au même effet.
 
-## 3.7 - La commande sleep
+## 3.8 - La commande sleep
 
 Finalement, la commande **`sleep`** sert à marquer une pause en secondes, ce
 qui peut être utile dans des scripts. On peut également utiliser les options
@@ -183,8 +196,11 @@ décider de rediriger le **`standard output`** dans un fichier en utilisant le
 symbole **`>`**.
 
 ```bash
-    echo "Texte de sortie standard"  # Affiché à l'écran
-    echo "Texte de sortie standard" > echo_output.temp  # Redirigé dans fichier
+    # Afficher la sortie à l'écran
+    echo "Texte de sortie standard"
+
+    # Rediriger la sortie dans un fichier
+    echo "Texte de sortie standard" > echo_output.temp
 
     cat echo_output.temp
 ```
@@ -208,7 +224,6 @@ ajoutée à la fin du fichier.
 
     cat la_date.temp
 ```
-
 
 ## 4.2 - Erreur standard (standard error)
 
@@ -287,7 +302,6 @@ pourrions être intéressé à savoir combien de fois la séquence **`ACTG`** se
 retrouve dans un fichier de séquences.
 
 ```bash
-    # Dans le dossier contenant le fichier 'sequences.fasta'
     grep -o ACTG sequences_01.txt | wc -l
 ```
 
@@ -298,15 +312,181 @@ dans de très gros fichiers.
 
 # 5 - Manipulation de texte
 
-- Nouvelles commandes
-  - grep (Regex)
-  - sort
-  - uniq -c
-  - wc
-  - perl
-  - sed
-  - awk
-- Donner exemples de de qu'on peut faire avec grep/sed/perl...
+Les ordinateurs et les besoins des utilisateurs ont beaucoup changés au fil des
+années. Cependant, une tendances demeure&nbsp;: nous dépendons des fichiers
+texte (par opposition aux fichiers binaires, comme les fichiers produits par
+les logiciels de la suite Microsoft Office, par exemple). Nos données brutes
+sont dans des fichiers texte. Les paramêtres, entrées et sorties des programmes
+sont dans des fichiers texte. Les fichiers de configuration sont des fichiers
+textes. La raison est simple&nbsp;: il est facile de produire, éditer,
+modifier, chercher dans et lire des fichiers texte. Toute la notion de pipeline
+repose sur le fait que les commandes UNIX utilisent comme entrées des fichiers
+texte et produisent en sortie des fichiers texte.
+
+Dans cette section, nous allons explorer quelques commandes utiles pour
+manipuler du texte. Pour présenter les différentes commandes, nous allons
+utiliser des exemples qui produisent des résultats qui sont peu utiles en
+eux-mêmes mais qui permettent de mieux comprendre les commandes et la
+construction de pipelines.
+
+## 5.1 - La commande grep
+
+La commande **`grep`** permet de trouver des lignes qui contiennent soit un mot
+ou un patron de recherche, qui peut être une expression régulière complexe.
+Voici quelques exemples assez simples. Nous pourrons accomplir des recherches
+plus complexes quand nous maîtriserons les expressions régulières, un mini
+langage spécialisé dans la recherche et le remplacement de texte, que nous
+verrons lors du prochain cours.
+
+```bash
+    grep Alice alice.txt  # Cherche les lignes contenant 'Alice'
+    grep Alice alice.txt | wc -l  # Compte le nombre de ces lignes
+```
+
+La commande **`grep`** possède plusieurs options utiles qui sont présentées
+brièvement dans les deux prochaines sous-sections.
+
+### 5.1.1 - Quelques options très utiles
+
+- **`-c`**&nbsp;: Afficher le nombre de lignes trouvées plutôt que les lignes
+- **`-v`**&nbsp;: Rechercher les lignes où le patron n'est **pas** trouvé
+- **`-i`**&nbsp;: Rechercher en minuscules ou en majuscules
+- **`-E`**&nbsp;: Utiliser des expressions régulières complexes
+- **`-o`**&nbsp;: Afficher seulement la partie qui correspond au patron
+
+### Quelques exemples&nbsp;:
+
+```bash
+    # Compter le nombre de lignes avec Alice
+    grep -c Alice alice.txt  
+
+    # Compter le nombre de lignes sans Alice
+    grep -vc Alice alice.txt
+   
+    # Compter un mot sans se soucier des majuscules 
+    grep -c " the " alice.txt  # Compter " the "
+    grep -c " The " alice.txt  # Compter " The "
+    grep -ci " the " alice.txt  # Compter " the " et " The "
+
+    # Trouver les noms de chapitre
+    grep -iEo "^chapter.*" alice.txt
+
+```
+
+### Attention avec les fichiers fasta !
+
+Le symbole **`>`** est important pour différencier les séquences dans un
+fichier fasta. Or, ce même symbole est aussi utilisé par le terminal pour
+signifier la redirection de la sortie standard. Lorsqu'on veut rechercher les
+noms des séquences contenues dans un fichier fasta avec la commande **`grep`**,
+**il est crucial de mettre le symbole `>` entre guillemets**&nbsp;! Si vous ne
+le faites pas, le systèmes croira que vous souhaitez écrire dans le fichier en
+question et il sera écrasé. Voici la syntaxe à utiliser.
+
+```bash
+    # Compter le nombre de séquences dans des fichiers fasta
+    grep -c ">" fichier.fasta
+```
+
+
+### 5.1.2 - Quelques options moins fréquentes mais utiles
+
+- **`-A`**&nbsp;: Afficher la ligne plus n lignes **après** celle-ci
+- **`-B`**&nbsp;: Afficher la ligne plus n lignes **avant** celle-ci
+- **`-C`**&nbsp;: Afficher la ligne plus n lignes **avant et après** celle-ci
+- **`-f`**&nbsp;: Rechercher les patrons qui se trouvent dans un fichier
+- **`-R`**&nbsp;: Rechercher dans tous les fichiers d'un dossier
+
+### Quelques exemples&nbsp;:
+
+```bash
+    # Lignes avec patron plus 3 lignes de contexte avant et après
+    grep -C 3 "Alice said nothing" alice.txt
+
+    # Lignes avec un des patrons dans le fichier 'patterns_for_grep'
+    grep -i -f patterns_for_grep alice.txt | wc -l
+```
+
+## 5.2 - La commande sort
+
+La commande **`sort`** permet de trier des lignes. On peut trier en ordre
+croissant ou décroissant, alphabétiquement ou numériquement, etc.
+
+```bash
+    cat patterns_for_grep
+    sort patterns_for_grep
+```
+
+### 5.2.1 - Quelques options utiles
+
+- **`-r`**&nbsp;: Trier en ordre inverse (reverse)
+- **`-u`**&nbsp;: Trier et enlever les lignes identiques
+- **`-n`**&nbsp;: Trier en ordre numérique
+- **`-h`**&nbsp;: Trier tailles de fichiers (eg&nbsp;: 10Ko < 10Mo < 10Go)
+- **`-V`**&nbsp;: Trier numéros de version (eg&nbsp;: v1.2 < v10.1)
+
+Les options **`-h`** **`-V`** ne sont pas disponibles sur tous les systèmes,
+entre autres sur MacOS.
+
+### Quelques exemples&nbsp;:
+
+```bash
+    sort -r patterns_for_grep
+
+    # Compter le nombre de lignes uniques
+    sort -u alice.txt | wc -l
+
+    # Afficher les fichiers et dossier triés par taille
+    du -sh * | sort -hr
+```
+
+## 5.3 - La commande uniq
+
+Cette commande enlève les lignes répétées. En utilisant son option **`-c`** en
+combinaison avec la commande **`sort`**, elle retourne le nombre de fois où
+chaque ligne a été trouvée.
+
+### Comparer le résultat des deux commandes suivantes
+
+```bash
+    # Nombre de lignes dans le fichier
+    wc -l alice
+
+    # Nombre de lignes uniques dans le fichier
+    sort alice.txt | uniq -c | sort -nr | head -n 20
+
+    # Trouver les codons les plus fréquents
+    grep -v ">" codons.fasta | sort | uniq -c | sort -nr | head
+
+```
+
+## 5.4 - La commande cut
+
+La commande **`cut`** permet d'extraire des parties de lignes, soit par
+colonnes ou par position des caractères dans la ligne.
+
+### 5.4.1 - Quelques options utiles
+
+- **`-f`**&nbsp;: Lister les colonnes (field) à garder
+- **`-d`**&nbsp;: Spécifier le caractère séparateur de colonnes
+- **`-c`**&nbsp;: Spécifier les caractères à garder
+
+```bash
+    # Garder seulement la deuxième colonne
+    cut -f 2 work.csv
+
+    # Garder les colonnes 2 et 3
+    cut -f 2,3 work.csv
+
+    # Garder les caractères 1, 3 et 5
+    cut -c 1,3,5 alice.txt | head -20
+
+    # Garder les caractères 10 à 20
+    cut -c 10-20 alice.txt | head -20
+
+    # Garder les caractères du début de la ligne jusqu'au 15ième
+    cut -c -15 alice.txt | head -20
+```
 
 
 # 6 - Mot de la fin
@@ -314,17 +494,16 @@ dans de très gros fichiers.
 ## 6.1 - Aujourd'hui, nous avons vu&nbsp;:
 
 - Révision rapide des dossiers importants
-- Quelques commandes utiles
-- Les entrées et sorties et la redirection
+- Quelques commandes système utiles
+- Les entrées, les sorties et la redirection
 - Les pipelines
 - Quelques commandes pour manipuler du texte
-- Une introduction aux expressions régulières (Regex)
 
 ## 6.2 - Au prochain cours, nous verrons&nbsp;:
 
 - Manipulation de texte plus avancée
-  - Expressions régulières plus en détail
-  - Plus de magie avec perl, sed et awk
+- Expressions régulières
+- Plus de magie avec perl, sed et awk
 - Compression et décompression de fichiers
 
 ## 6.3 - Questions et suggestions
@@ -332,6 +511,9 @@ dans de très gros fichiers.
 N'hésitez pas à me poser vos questions durant les cours ou par courriel. Je
 vais tenter d'y répondre durant les cours. Je vais aussi prendre vos
 suggestions en note pour tenter d'améliorer le cours.
+
+
+\newpage
 
 
 # 7 - Exercices
@@ -349,11 +531,23 @@ parenthèses, vous trouverez le nom en anglais de la commande (pour vous aider �
 retenir la commande). Entre crochets, vous trouverez les options les plus
 souvent utilisées&nbsp;:
 
-## 8.1 - Commandes utiles
+## 8.1 - Commandes système utiles
 
-- **`cmd`**&nbsp;: Description (english name) **`[options]`**
+- **`history`**&nbsp;: Afficher historique des commandes
+- **`echo`**&nbsp;: Imprimer texte à l'écran **`[-n, -e]`**
+- **`man`**&nbsp;: Afficher le manuel des commandes (manual)
+- **`top`**&nbsp;: Afficher les processus gourmands
+- **`sleep`**&nbsp;: Faire une pause **`[s, m, h]`**
 
 ## 8.2 - Entrées et sorties
+
+- **`>`**&nbsp;: Rediriger la sortie standard (redirect standard output)
+- **`>>`**&nbsp;: Ajouter la sortie standard à la fin d'un fichier (append)
+- **`2>`**&nbsp;: Rediriger l'erreur standard (redirect standard error)
+- **`&>`**&nbsp;: Rediriger à la fois la sortie et l'erreur standard
+- **`2>&1`**&nbsp;: Joindre l'erreur standard et la sortie standard
+- **`<`**&nbsp;: Spécifier l'entrée standard (standard input)
+- **`|`**&nbsp;: Caractère pour créer un pipeline (pipe)
 
 ## 8.3 - Manipuler du texte
 
@@ -363,4 +557,8 @@ souvent utilisées&nbsp;:
 - **`head`**&nbsp;: Afficher le début d'un fichier **`[-n]`**
 - **`tail`**&nbsp;: Afficher la fin d'un fichier **`[-n]`**
 - **`less`**&nbsp;: Lire un fichier
+- **`grep`**&nbsp;: Chercher du texte (get regular expression) **`[-c, -v, -i, -E, -o, -A, -B, -C, -f, -R]`**
+- **`sort`**&nbsp;: Trier des lignes **`[-r, -u, -n, -h, -V]`**
+- **`uniq`**&nbsp;: Enlever lignes répétées (unique) **`[-c]`**
+- **`cut`**&nbsp;: Extraire colonnes ou caractères **`[-f, -d, -c]`**
 

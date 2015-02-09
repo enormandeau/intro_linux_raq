@@ -1,12 +1,9 @@
 # Sujets pour cours
 ## Global
-x Commandes utiles (man, history, top...)
-x Manipuler fichiers et dossiers (cp, mv, ls, mkdir...)
 - Transfère de données (See katak course for examples)
   - scp, rsync, wget, curl, sftp
 - Permissions (chmod, chown)
-x Redirection
-x Pipelines
+- boucles for
 
 ## Manipuler texte
 - Trouver et modifier (grep, sed, awk, perl...)
@@ -34,6 +31,7 @@ x Pipelines
 ## Misc
 - Formats Windows **`\r\n`**, Mac **`^M`** et Linux **`\n`**)
 - Cheatsheet
+- parallel
 - Résumé des commandes avec options utiles et exemples
 - Getting help (doc, forums, google)
 - Tous les serveurs sont différents

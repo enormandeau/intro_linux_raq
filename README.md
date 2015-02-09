@@ -56,7 +56,7 @@ Document de cours :
 ## Semaine 3
 - Manipulation de texte avancée
 - Expressions régulières
-- sed, awk, perl
+- perl, sed, awk
 - Compression de fichiers (gzip/gunzip, zip/unzip, tar)
 - Exercices à faire avant la semaine prochaine
 
