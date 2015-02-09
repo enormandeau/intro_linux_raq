@@ -54,7 +54,31 @@ Document de cours :
 - Exercices à faire avant la semaine prochaine
 
 ## Semaine 3
-- À venir
+- Manipulation de texte avancée
+- Expressions régulières
+- sed, awk, perl
+- Compression de fichiers (gzip/gunzip, zip/unzip, tar)
+- Exercices à faire avant la semaine prochaine
+
+## Semaine 4
+- Éditeurs de textes
+- Écrire et lancer des scripts
+- Fichiers config .bashrc et .profile
+- Tmux
+- Exercices à faire avant la semaine prochaine
+
+## Semaine 5
+- Transfert de données
+- Télécharger avec wget
+- Installation de programmes
+  - La variable PATH
+- Exercices à faire avant la semaine prochaine
+
+## Semaine 6
+- Alignement de séquences
+- Blasts
+- Exercices à faire avant la semaine prochaine
 
 ## Ressources
 - À venir
+

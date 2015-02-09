@@ -87,6 +87,8 @@ x ssh
 x > (redirect output to file)
 x < (get input from)
 x >> (append output to file)
+x | (pipe)
+- tee
 
 ## Terminal commands
 x Ctrl-C (cancel command)
