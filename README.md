@@ -40,44 +40,40 @@ Document de cours :
 - Connection au serveur Linux utilisé durant le cours
 - Introduction au terminal (Linux, MacOS, Windows avec putty.exe)
 - Commandes de base
-- Exercices à faire avant la semaine prochaine
 
 ## Semaine 2
-<!--
 Document de cours :
 [intro_linux_raq_semaine_02.pdf](https://github.com/enormandeau/intro_linux_raq/blob/master/02_cours/cours_02/intro_linux_raq_semaine_02.pdf?raw=true)
--->
 - Dossiers importants
 - Plus de commandes utiles
 - Entrées et sorties de programmes
 - Création de pipelines avec les commandes
-- Exercices à faire avant la semaine prochaine
 
 ## Semaine 3
 - Manipulation de texte avancée
 - Expressions régulières
 - perl, sed, awk
 - Compression de fichiers (gzip/gunzip, zip/unzip, tar)
-- Exercices à faire avant la semaine prochaine
 
 ## Semaine 4
-- Éditeurs de textes
+- Éditeurs de textes (et formats de retour de ligne)
+- Permissions des fichiers et dossiers
 - Écrire et lancer des scripts
 - Fichiers config .bashrc et .profile
+- Aliases
 - Tmux
-- Exercices à faire avant la semaine prochaine
 
 ## Semaine 5
 - Transfert de données
 - Télécharger avec wget
+- Boucles for
 - Installation de programmes
-  - La variable PATH
-- Exercices à faire avant la semaine prochaine
 
 ## Semaine 6
 - Alignement de séquences
+- Parallel
+- Screen et Tmux
 - Blasts
-- Exercices à faire avant la semaine prochaine
 
 ## Ressources
 - À venir

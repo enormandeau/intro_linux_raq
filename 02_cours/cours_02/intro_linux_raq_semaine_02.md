@@ -1,6 +1,5 @@
 # Introduction à Linux RAQ - Cours 02
 Eric Normandeau - 2015-02-05  
-(**Version NON terminée**)
 
 # Plan de cours
 
@@ -42,6 +41,9 @@ Nous allons copier un dossier déjà préparé pour le cours 02 avec la commande
     cd  # Pour retourner dans notre dossier d'utilisateur
     cp -r /cours_intro_linux/cours_02 .
 ```
+
+Toutes les commandes du cours utilisant des fichiers sont lancées à partir du
+dossier **`/home/username/cours_02/01_fichiers`**.
 
 
 # 2 - Dossiers importants
@@ -184,6 +186,19 @@ pour que la pause soit plutôt en minutes, heures, etc.
     sleep 3; echo "Hello"
 ```
 
+## 3.8 - Expansion automatique avec '\*' (globing)
+
+On peut parfois utiliser le symbole **`*`** pour dire *n'importe quelle chaîne
+de caractères*. Par exemple, si on veut lister la taille de tous les fichiers
+fasta d'un dossier, on peut utiliser la commande suivante.
+
+```bash
+    ls -lh *.fasta
+
+    # Voici ce que la commande 'ls' reçoit en fait:
+    echo *.fasta
+```
+
 
 # 4 - Entrées et sorties
 
@@ -289,7 +304,6 @@ allons compter le nombre de fois où on retrouve le mot **`Alice`** dans le
 fichier **`alice.txt`** avec les commandes **`grep`** et **`wc`**&nbsp;:
 
 ```bash
-    # Dans le dossier contenant le fichier 'alice.txt'
     grep -o Alice alice.txt | wc -l
 ```
 
@@ -384,8 +398,11 @@ le faites pas, le systèmes croira que vous souhaitez écrire dans le fichier en
 question et il sera écrasé. Voici la syntaxe à utiliser.
 
 ```bash
-    # Compter le nombre de séquences dans des fichiers fasta
-    grep -c ">" fichier.fasta
+    # Compter les séquences dans un fichier fasta
+    grep -c ">" sequences_01.fasta
+
+    # Compter les séquences pour TOUS les fichiers fasta
+    grep -c ">" *.fasta
 ```
 
 
@@ -452,12 +469,14 @@ chaque ligne a été trouvée.
     # Nombre de lignes dans le fichier
     wc -l alice
 
-    # Nombre de lignes uniques dans le fichier
+    # Trouver le nombre de lignes uniques
+    sort -u alice.txt | wc -l
+
+    # Trouver lignes les plus fréquentes
     sort alice.txt | uniq -c | sort -nr | head -n 20
 
     # Trouver les codons les plus fréquents
     grep -v ">" codons.fasta | sort | uniq -c | sort -nr | head
-
 ```
 
 ## 5.4 - La commande cut
@@ -525,7 +544,47 @@ suggestions en note pour tenter d'améliorer le cours.
 
 # 7 - Exercices
 
-- ...
+## 7.1 - Commandes utiles
+
+- Afficher l'historique des commandes (commande&nbsp;: **`history`**)
+- Rechercher la dernière commande où vous avez utilisé **`cp -r`** (commande&nbsp;: **`Ctrl-R`**)
+- Lancer la commande **`cat`** sans option et arrêtez-la (commande&nbsp;: **`Ctrl-C`**)
+- Afficher votre nom suivi de la date dans le terminal (commande&nbsp;: **`echo`**)
+- Afficher le manuel de la commande **`echo`** (commande&nbsp;: **`man`**)
+- Afficher les processus courrants (commande&nbsp;: **`top`**)
+- Vider le terminal du texte affiché (commande&nbsp;: **`clear`** ou **`Ctrl-L`**)
+- Faire une pause de 3 secondes (commande&nbsp;: **`sleep`**)
+- Afficher votre nom mais envoyer le résultat dans un fichier (commande&nbsp;: **`>`**)
+- Ajouter la date à la fin de ce fichier (commande&nbsp;: **`>>`**)
+- Afficher les 10 dernières commandes lancées grâce à un pipeline (commande&nbsp;: **`history`**, **`|`**, **`tail`**)
+
+## 7.2 - grep
+- Compter le nombre de séquences dans tous les fichiers .fasta (commande&nbsp;: **`grep`**)
+- Trouver tous les noms de séquences du fichier sequences_02.fasta (commande&nbsp;: **`grep`**)
+- Trouver toutes les séquences du fichier sequences_02.fasta (commande&nbsp;: **`grep`**)
+
+## 7.3 - sort
+- Trier en ordre alphabétique les lignes du fichier **`work.csv`** (commande&nbsp;: **`sort`**)
+- Trier en ordre alphabétique inverse les lignes du fichier **`work.csv`** (commande&nbsp;: **`sort`**)
+- Bonus&nbsp;: Trier en ordre numérique de la colonne 2 les lignes du fichier **`work.csv`** (commande&nbsp;: **`sort`**)
+
+## 7.4 - uniq
+- Compter le nombre de lignes dans le fichier **`repeated_lines.txt`** (commande&nbsp;: **`wc`**)
+- Compter le nombre de lignes après avoir enlevé les lignes consécutives identiques (commande&nbsp;: **`uniq`** et **`wc`**)
+- Compter le nombre de lignes uniques (commande&nbsp;: **`sort`** et **`wc`**)
+- Compter le nombre de fois où chaque ligne est représentée (commande&nbsp;: **`sort`**, **`uniq`**)
+
+## 7.5 - cut
+- Extraire la 3ième colonne du fichier **`work.csv`** (commande&nbsp;: **`cmd`**)
+- Extraire la 1ère et la 2ième colonne du fichier **`work.csv`** (commande&nbsp;: **`cmd`**)
+- Extraire les 20 premiers caractères de chaque ligne du fichier **`repeated_lines.txt`** (commande&nbsp;: **`cmd`**)
+
+## 7.6 - Pipelines
+- Afficher les 10 dernières commandes lancées grâce à un pipeline (commande&nbsp;: **`history`**, **`|`**, **`tail`**)
+- Afficher les 20 première lignes de **`alice.txt`** et choisissez un mot fréquent (commande&nbsp;: **`head`** et **`less`**)
+- Compter le nombre de lignes où ce mot apparaît dans le même fichier (commande&nbsp;: **`grep`** et **`wc`**)
+- Trouver combien de séquences contiennent **`ACCGTA`** dans **`sequences_02.fasta`** (commande&nbsp;: **`grep`** et **`wc`**)
+- Trouver combien de séquences débutent par **`ATT`** dans **`sequences_02.fasta`** (commande&nbsp;: **`grep`** et **`wc`**)
 
 
 \newpage

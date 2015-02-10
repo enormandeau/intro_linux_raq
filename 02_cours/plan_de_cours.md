@@ -30,10 +30,12 @@
 
 ## Misc
 - Formats Windows **`\r\n`**, Mac **`^M`** et Linux **`\n`**)
-- Cheatsheet
 - parallel
+- Soumettre des jobs sur des serveurs de calcul (?)
+
+## Ressources
+- Cheatsheets
 - Résumé des commandes avec options utiles et exemples
 - Getting help (doc, forums, google)
 - Tous les serveurs sont différents
-- Soumettre des jobs sur des serveurs de calcul
 
