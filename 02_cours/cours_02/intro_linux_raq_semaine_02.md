@@ -405,7 +405,6 @@ question et il sera écrasé. Voici la syntaxe à utiliser.
     grep -c ">" *.fasta
 ```
 
-
 ### 5.1.2 - Quelques options moins fréquentes mais utiles
 
 - **`-A`**&nbsp;: Afficher la ligne plus n lignes **après** celle-ci
@@ -547,44 +546,72 @@ suggestions en note pour tenter d'améliorer le cours.
 ## 7.1 - Commandes utiles
 
 - Afficher l'historique des commandes (commande&nbsp;: **`history`**)
-- Rechercher la dernière commande où vous avez utilisé **`cp -r`** (commande&nbsp;: **`Ctrl-R`**)
-- Lancer la commande **`cat`** sans option et arrêtez-la (commande&nbsp;: **`Ctrl-C`**)
-- Afficher votre nom suivi de la date dans le terminal (commande&nbsp;: **`echo`**)
+- Rechercher la dernière commande où vous avez utilisé **`cp -r`**
+(commande&nbsp;: **`Ctrl-R`**)
+- Lancer la commande **`cat`** sans option et arrêtez-la (commande&nbsp;:
+**`Ctrl-C`**)
+- Afficher votre nom suivi de la date dans le terminal (commande&nbsp;:
+**`echo`**)
 - Afficher le manuel de la commande **`echo`** (commande&nbsp;: **`man`**)
 - Afficher les processus courrants (commande&nbsp;: **`top`**)
-- Vider le terminal du texte affiché (commande&nbsp;: **`clear`** ou **`Ctrl-L`**)
+- Vider le terminal du texte affiché (commande&nbsp;: **`clear`** ou
+**`Ctrl-L`**)
 - Faire une pause de 3 secondes (commande&nbsp;: **`sleep`**)
-- Afficher votre nom mais envoyer le résultat dans un fichier (commande&nbsp;: **`>`**)
+- Afficher votre nom mais envoyer le résultat dans un fichier (commande&nbsp;:
+**`>`**)
 - Ajouter la date à la fin de ce fichier (commande&nbsp;: **`>>`**)
-- Afficher les 10 dernières commandes lancées grâce à un pipeline (commande&nbsp;: **`history`**, **`|`**, **`tail`**)
+- Afficher les 10 dernières commandes lancées grâce à un pipeline
+(commande&nbsp;: **`history`**, **`|`**, **`tail`**)
 
 ## 7.2 - grep
-- Compter le nombre de séquences dans tous les fichiers .fasta (commande&nbsp;: **`grep`**)
-- Trouver tous les noms de séquences du fichier sequences_02.fasta (commande&nbsp;: **`grep`**)
-- Trouver toutes les séquences du fichier sequences_02.fasta (commande&nbsp;: **`grep`**)
+
+- Compter le nombre de séquences dans tous les fichiers .fasta (commande&nbsp;:
+**`grep`**)
+- Trouver tous les noms de séquences du fichier sequences_02.fasta
+(commande&nbsp;: **`grep`**)
+- Trouver toutes les séquences du fichier sequences_02.fasta (commande&nbsp;:
+**`grep`**)
 
 ## 7.3 - sort
-- Trier en ordre alphabétique les lignes du fichier **`work.csv`** (commande&nbsp;: **`sort`**)
-- Trier en ordre alphabétique inverse les lignes du fichier **`work.csv`** (commande&nbsp;: **`sort`**)
-- Bonus&nbsp;: Trier en ordre numérique de la colonne 2 les lignes du fichier **`work.csv`** (commande&nbsp;: **`sort`**)
+
+- Trier en ordre alphabétique les lignes du fichier **`work.csv`**
+(commande&nbsp;: **`sort`**)
+- Trier en ordre alphabétique inverse les lignes du fichier **`work.csv`**
+(commande&nbsp;: **`sort`**)
+- Bonus&nbsp;: Trier en ordre numérique de la colonne 2 les lignes du fichier
+**`work.csv`** (commande&nbsp;: **`sort`**)
 
 ## 7.4 - uniq
-- Compter le nombre de lignes dans le fichier **`repeated_lines.txt`** (commande&nbsp;: **`wc`**)
-- Compter le nombre de lignes après avoir enlevé les lignes consécutives identiques (commande&nbsp;: **`uniq`** et **`wc`**)
+
+- Compter le nombre de lignes dans le fichier **`repeated_lines.txt`**
+(commande&nbsp;: **`wc`**)
+- Compter le nombre de lignes après avoir enlevé les lignes consécutives
+identiques (commande&nbsp;: **`uniq`** et **`wc`**)
 - Compter le nombre de lignes uniques (commande&nbsp;: **`sort`** et **`wc`**)
-- Compter le nombre de fois où chaque ligne est représentée (commande&nbsp;: **`sort`**, **`uniq`**)
+- Compter le nombre de fois où chaque ligne est représentée (commande&nbsp;:
+**`sort`**, **`uniq`**)
 
 ## 7.5 - cut
-- Extraire la 3ième colonne du fichier **`work.csv`** (commande&nbsp;: **`cmd`**)
-- Extraire la 1ère et la 2ième colonne du fichier **`work.csv`** (commande&nbsp;: **`cmd`**)
-- Extraire les 20 premiers caractères de chaque ligne du fichier **`repeated_lines.txt`** (commande&nbsp;: **`cmd`**)
+
+- Extraire la 3ième colonne du fichier **`work.csv`** (commande&nbsp;:
+**`cmd`**)
+- Extraire la 1ère et la 2ième colonne du fichier **`work.csv`**
+(commande&nbsp;: **`cmd`**)
+- Extraire les 20 premiers caractères de chaque ligne du fichier
+**`repeated_lines.txt`** (commande&nbsp;: **`cmd`**)
 
 ## 7.6 - Pipelines
-- Afficher les 10 dernières commandes lancées grâce à un pipeline (commande&nbsp;: **`history`**, **`|`**, **`tail`**)
-- Afficher les 20 première lignes de **`alice.txt`** et choisissez un mot fréquent (commande&nbsp;: **`head`** et **`less`**)
-- Compter le nombre de lignes où ce mot apparaît dans le même fichier (commande&nbsp;: **`grep`** et **`wc`**)
-- Trouver combien de séquences contiennent **`ACCGTA`** dans **`sequences_02.fasta`** (commande&nbsp;: **`grep`** et **`wc`**)
-- Trouver combien de séquences débutent par **`ATT`** dans **`sequences_02.fasta`** (commande&nbsp;: **`grep`** et **`wc`**)
+
+- Afficher les 10 dernières commandes lancées grâce à un pipeline
+(commande&nbsp;: **`history`**, **`|`**, **`tail`**)
+- Afficher les 20 première lignes de **`alice.txt`** et choisissez un mot
+fréquent (commande&nbsp;: **`head`** et **`less`**)
+- Compter le nombre de lignes où ce mot apparaît dans le même fichier
+(commande&nbsp;: **`grep`** et **`wc`**)
+- Trouver combien de séquences contiennent **`ACCGTA`** dans
+**`sequences_02.fasta`** (commande&nbsp;: **`grep`** et **`wc`**)
+- Trouver combien de séquences débutent par **`ATT`** dans
+**`sequences_02.fasta`** (commande&nbsp;: **`grep`** et **`wc`**)
 
 
 \newpage
@@ -618,12 +645,13 @@ souvent utilisées&nbsp;:
 ## 8.3 - Manipuler du texte
 
 - **`wc`**&nbsp;: Afficher le nombre de lignes d'un fichier (word count)
-  **`[-l]`**
+**`[-l]`**
 - **`cat`**&nbsp;: Afficher le contenu d'un fichier (concatenate)
 - **`head`**&nbsp;: Afficher le début d'un fichier **`[-n]`**
 - **`tail`**&nbsp;: Afficher la fin d'un fichier **`[-n]`**
 - **`less`**&nbsp;: Lire un fichier
-- **`grep`**&nbsp;: Chercher du texte (get regular expression) **`[-c, -v, -i, -E, -o, -A, -B, -C, -f, -R]`**
+- **`grep`**&nbsp;: Chercher du texte (get regular expression) **`[-c, -v, -i,
+-E, -o, -A, -B, -C, -f, -R]`**
 - **`sort`**&nbsp;: Trier des lignes **`[-r, -u, -n, -h, -V]`**
 - **`uniq`**&nbsp;: Enlever lignes répétées (unique) **`[-c]`**
 - **`cut`**&nbsp;: Extraire colonnes ou caractères **`[-f, -d, -c]`**
