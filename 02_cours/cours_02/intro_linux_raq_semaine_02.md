@@ -594,11 +594,11 @@ identiques (commande&nbsp;: **`uniq`** et **`wc`**)
 ## 7.5 - cut
 
 - Extraire la 3ième colonne du fichier **`work.csv`** (commande&nbsp;:
-**`cmd`**)
+**`cut`**)
 - Extraire la 1ère et la 2ième colonne du fichier **`work.csv`**
-(commande&nbsp;: **`cmd`**)
+(commande&nbsp;: **`cut`**)
 - Extraire les 20 premiers caractères de chaque ligne du fichier
-**`repeated_lines.txt`** (commande&nbsp;: **`cmd`**)
+**`repeated_lines.txt`** (commande&nbsp;: **`cut`**)
 
 ## 7.6 - Pipelines
 
