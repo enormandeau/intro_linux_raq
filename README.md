@@ -51,14 +51,14 @@ Document de cours :
 
 ## Semaine 3
 - Manipulation de texte avancée
-- Expressions régulières
 - perl, sed, awk
+- Expressions régulières
 - Compression de fichiers (gzip/gunzip, zip/unzip, tar)
 
 ## Semaine 4
 - Éditeurs de textes (et formats de retour de ligne)
-- Permissions des fichiers et dossiers
 - Écrire et lancer des scripts
+- Permissions des fichiers et dossiers
 - Fichiers config .bashrc et .profile
 - Aliases
 - Tmux
@@ -68,12 +68,12 @@ Document de cours :
 - Télécharger avec wget
 - Boucles for
 - Installation de programmes
+- Blasts
 
 ## Semaine 6
 - Alignement de séquences
 - Parallel
 - Screen et Tmux
-- Blasts
 
 ## Ressources
 - À venir
