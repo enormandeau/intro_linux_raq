@@ -14,16 +14,45 @@ Eric Normandeau - 2015-02-13
 
 # 1 - Introduction
 
-
-# 1.1 - Retour sur les exercies
+# 1.1 - Retour sur les exercices
 
 Réponse aux questions relatives aux exercices de la semaine passée.
 
 # 1.2 - Retour sur question avec séquences fasta
 
-- Installer fastx toolkit (pour fasta_formatter)
-- Mettre exemple
-- Dire qu'on pourrait aussi faire un programme python
+Nous souhaitons trouver toutes les séquences qui débutent par **`ATG`** dans le
+fichier **`sequences_wrapped.fasta`**. Nous utilisons la commande **`grep`**.
+
+
+```bash
+    # Séquences avec ATG au début de la ligne
+    grep -E "^ATG" sequences_wrapped.fasta
+```
+
+Malheureusement, les séquences sont repliées sur plusieurs lignes. Nous allons
+devoir les formatter pour que chaque séquence soit sur une seule ligne.
+
+```bash
+    # Déplier les séquences (une ligne par séquence)
+    fasta_unwrap.py sequences_wrapped.fasta sequences_unwrapped.fasta
+```
+
+Nous sommes maintenant prêts à trouver les séquences qui débutent par
+**`ATG`**.
+
+```bash
+    # Séquences qui débutent par ATG
+    grep -E "^ATG" sequences_unwrapped.fasta
+```
+
+Finalement, nous allons retrouver le nom de ces séquences.
+
+```bash
+    # Trouver le nom des séquences
+    grep -B 1 -E "^ATG" sequences_unwrapped.fasta 
+    grep -B 1 -E "^ATG" sequences_unwrapped.fasta | grep ">"
+    grep -B 1 -E "^ATG" sequences_unwrapped.fasta | grep ">" | cut -c 2-
+```
 
 # 1.2 - Importer le matériel du cours 03
 
