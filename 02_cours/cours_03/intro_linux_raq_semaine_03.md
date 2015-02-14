@@ -23,7 +23,6 @@ Réponse aux questions relatives aux exercices de la semaine passée.
 Nous souhaitons trouver toutes les séquences qui débutent par **`ATG`** dans le
 fichier **`sequences_wrapped.fasta`**. Nous utilisons la commande **`grep`**.
 
-
 ```bash
     # Séquences avec ATG au début de la ligne
     grep -E "^ATG" sequences_wrapped.fasta
@@ -70,6 +69,55 @@ dossier **`/home/username/cours_03/01_fichiers`**.
 
 # 2 - sed, awk et perl
 
+Intro, parler de :
+
+- Manipulation de texte
+- Rechercher et remplacer
+- Extraire certaines portions du texte
+
+## 2.1 - sed
+
+La commande **`sed`** (pour *stream editor*) permet d'éditer du texte provenant
+de fichiers ou de l'entré standard (**`standard input`**). On peut écrire des
+scripts pour **`sed`**, mais nous allons nous contenter de l'utiliser dans le
+terminal pour faire des commandes d'une ligne, aussi appelés **`oneliners`**.
+Sa syntaxe est la suivante&nbsp;;
+
+```bash
+    sed [options] commands [file-to-edit]
+```
+
+Typiquement, nous allons utiliser **`sed`** pour&nbsp;:
+
+- Rechercher et remplacer du texte
+- Extraire des portions de fichiers
+- Effacer des portions de fichiers
+
+## 2.2 - awk
+
+La commande **`awk`** est en fait un puissant langage de programmation pour
+manipuler des fichiers et des calculs arithmétiques. Son nom vient des
+premières lettres des noms des auteurs (Alfred **A**ho, Peter **W**einberger,
+and Brian **K**ernighan). On peut écrire des scripts dans le langage de
+**`awk`**, mais comme pour sed, nous allons nous contenter de l'utiliser dans
+le terminal pour faire des **`oneliners`**. Sa syntaxe est la suivante&nbsp;;
+
+```bash
+    awk 'BEGIN {start_action} {action} END {stop_action}' filename
+```
+
+Typiquement, nous allons utiliser **`awk`** pour&nbsp;:
+
+- Rechercher et remplacer du texte
+- Extraire des portions de fichiers
+- Effacer des portions de fichiers
+
+## 2.3 - perl
+
+Le langage de programmation **`perl`** a été à l'origine inventé pour remplacer
+**`grep`**, **`find`**, **`sed`** et **`awk`** par un seul programme.
+
+
 # 3 - Expressions régulières
 
 # 4 - Compression de fichiers
@@ -78,17 +126,19 @@ dossier **`/home/username/cours_03/01_fichiers`**.
 
 ## 5.1 - Aujourd'hui, nous avons vu&nbsp;:
 
-- asdf
-- asdf
-- asdf
+- Comment *déplier* des séquences fasta
+- Les bases des **`sed`**, **`awk`** et **`perl`**
+- Un survol des expressions régulières
 
-message
+TODO : message
 
 ## 5.2 - Au prochain cours, nous verrons&nbsp;:
 
-- asdf
-- asdf
-- asdf
+- Les éditeurs de texte dans le terminal
+- Écrire des scripts bash / perl / python
+- Changer les permissions des fichiers
+- Créer des aliases de commandes
+- Screen et Tmux
 
 ## 5.3 - Questions et suggestions
 
