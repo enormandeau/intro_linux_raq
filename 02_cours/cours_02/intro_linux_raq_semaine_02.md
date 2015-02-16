@@ -18,7 +18,7 @@ Eric Normandeau - 2015-02-05
 Dans ce deuxième cours d'introduction à Linux, nous allons poursuivre notre
 exploration des commandes importantes. Je vais de plus en plus considérer que
 la matière déjà vue est acquise, mais n'hésitez surtout pas si vous avez besoin
-d'un rappel sur une fonction, un paramêtre, une manière de faire les choses,
+d'un rappel sur une fonction, un paramètre, une manière de faire les choses,
 etc.
 
 Nous allons aussi parler d'entrée standard, de sortie standard et d'erreur
@@ -28,7 +28,7 @@ comment rediriger la sortie d'un programme directement dans un autre programme,
 ce qu'on appelle un **`pipeline`**, ce qui nous permettra de commencer à
 manipuler des fichiers texte.
 
-# 1.1 - Retour sur les exercies
+# 1.1 - Retour sur les exercices
 
 Réponse aux questions relatives aux exercices de la semaine passée.
 
@@ -54,7 +54,7 @@ dossiers système.
 ## 2.1 - Dossiers spéciaux
 
 - **`.`** : Dossier dans lequel vous vous trouvez présentement.
-- **`..`** : Dossier parent de celui dans lequel vous vousu trouvez.
+- **`..`** : Dossier parent de celui dans lequel vous vous trouvez.
 - **`~`** : Votre dossier d'utilisateur (eg : **`/home/user02`**)
 - **`/`** : Le dossier racine du système.
 - **`-`** : Le dossier où vous vous trouviez juste précédemment.
@@ -69,10 +69,10 @@ trouvent à la racine, mais ça n'est pas essentiel pour utiliser Linux.
 - **`/dev`** : Liens vers composantes physiques (*devices*)
 - **`/etc`** : Fichiers de configuration Linux et logiciels
 - **`/home`** : Dossiers des utilisateurs (*user home folders*)
-- **`/lib`** : Libraries pour logiciels
+- **`/lib`** : Librairies pour logiciels
 - **`/media`** : Disques durs externes ou réseau...
-- **`/mnt`** : Vieut nom pour **`/media`**
-- **`/opt`** : Applications optionelles
+- **`/mnt`** : Vieux nom pour **`/media`**
+- **`/opt`** : Applications optionnelles
 - **`/proc`** : Information des processus et du système
 - **`/root`** : Dossier de l'utilisateur **`root`** (administrateur)
 - **`/run`** : Services en cours d'utilisation (eg : serveur **`ssh`**)
@@ -114,12 +114,12 @@ commande qui correspond au texte cherché. Si le terminal trouve une commande
 qui correspond, vous pouvez chercher plus loin dans le temps en appuyant à
 nouveau sur **`Ctrl-R`**. Lorsqu'une commande est affichée, vous pouvez la
 lancer directement en appuyant sur **`Enter`** ou la modifier en vous déplaçant
-dedans avec les flèches à gauche et à droite. Finalement, vous pouvez canceller
+dedans avec les flèches à gauche et à droite. Finalement, vous pouvez annuler
 la recherche avec **`Ctrl-C`**.
 
 ## 3.3 - La commande Ctrl-C
 
-La commande **`Ctrl-C`** vous permet de canceller une commande en cours
+La commande **`Ctrl-C`** vous permet de annuler une commande en cours
 d'exécution, alors que la commande **`Ctrl-D`** arrête un programme, incluant
 le terminal **`bash`** lui-même. Vous pouvez donc utiliser **`Ctrl-D`** pour
 quitter votre session de connexion **`ssh`** au serveur et même pour fermer le
@@ -163,8 +163,8 @@ lancés par votre utilisateur.
     top
 ```
 
-Pour sortir de la commande **`top`**, vous pressez la touche **`q`**, commme
-pour sortir de la commane **`less`**.
+Pour sortir de la commande **`top`**, vous pressez la touche **`q`**, comme
+pour sortir de la commande **`less`**.
 
 ## 3.7 - La commande clear
 
@@ -247,7 +247,7 @@ derniers sont envoyés vers l'erreur standard (**`standard error`**). Par
 exemple, si on lance la commande **`cat`** avec un nom de fichier inexistant,
 on obtient une erreur. Il est parfois difficile de différencier les sorties
 standards (**`standard output`**) et les erreurs standards (**`standard
-error`**) cat elles sont toutes deux affichées à l'écran. Cependant, l'erreur
+error`**) car elles sont toutes deux affichées à l'écran. Cependant, l'erreur
 standard peut être redirigée en utilisant un autre symbole&nbsp;: **`2>`**.
 
 ```bash
@@ -264,7 +264,7 @@ les redirigeant dans deux fichiers différents.
     echo -e "\n==> Begin Error"; cat error.temp; echo -e "==> End Error\n"
 ```
 
-Cette fois-ci, nous allons donner à la commande **`cat`** un nom de fichier qui
+Cette fois ci, nous allons donner à la commande **`cat`** un nom de fichier qui
 n'existe pas pour voir ce qui arrive avec la sortie et l'erreur standard.
 
 ```bash
@@ -297,7 +297,7 @@ d'une commande directement dans l'entrée standard de la commande suivante. De
 cette façon, on peut traiter la sortie d'une commande avec un ou plusieurs
 autres commandes sans avoir à écrire le résultat dans un fichier intermédiaire.
 Les pipelines seront particulièrement utiles lorsque nous allons extraire ou de
-reformater l'information contenue dans des fichiers texte.
+formater l'information contenue dans des fichiers texte.
 
 Voici un exemple très simple de pipeline avec seulement deux commandes. Nous
 allons compter le nombre de fois où on retrouve le mot **`Alice`** dans le
@@ -307,7 +307,7 @@ fichier **`alice.txt`** avec les commandes **`grep`** et **`wc`**&nbsp;:
     grep -o Alice alice.txt | wc -l
 ```
 
-La première commande extrait toutes les occurences du pattron de recherche (ici
+La première commande extrait toutes les occurrences du patron de recherche (ici
 c'est simplement 'Alice') et les met une par ligne. Cette sortie est alors
 directement passée à la commande suivante comme s'il s'agissait d'un fichier
 contenant du texte et celle-ci nous retourne le nombre de lignes. Cette même
@@ -330,7 +330,7 @@ Les ordinateurs et les besoins des utilisateurs ont beaucoup changés au fil des
 années. Cependant, une tendances demeure&nbsp;: nous dépendons des fichiers
 texte (par opposition aux fichiers binaires, comme les fichiers produits par
 les logiciels de la suite Microsoft Office, par exemple). Nos données brutes
-sont dans des fichiers texte. Les paramêtres, entrées et sorties des programmes
+sont dans des fichiers texte. Les paramètres, entrées et sorties des programmes
 sont dans des fichiers texte. Les fichiers de configuration sont des fichiers
 textes. La raison est simple&nbsp;: il est facile de produire, éditer,
 modifier, chercher dans et lire des fichiers texte. Toute la notion de pipeline
@@ -548,12 +548,12 @@ suggestions en note pour tenter d'améliorer le cours.
 - Afficher l'historique des commandes (commande&nbsp;: **`history`**)
 - Rechercher la dernière commande où vous avez utilisé **`cp -r`**
 (commande&nbsp;: **`Ctrl-R`**)
-- Lancer la commande **`cat`** sans option et arrêtez-la (commande&nbsp;:
+- Lancer la commande **`cat`** sans option et arrêtez la (commande&nbsp;:
 **`Ctrl-C`**)
 - Afficher votre nom suivi de la date dans le terminal (commande&nbsp;:
 **`echo`**)
 - Afficher le manuel de la commande **`echo`** (commande&nbsp;: **`man`**)
-- Afficher les processus courrants (commande&nbsp;: **`top`**)
+- Afficher les processus courants (commande&nbsp;: **`top`**)
 - Vider le terminal du texte affiché (commande&nbsp;: **`clear`** ou
 **`Ctrl-L`**)
 - Faire une pause de 3 secondes (commande&nbsp;: **`sleep`**)
