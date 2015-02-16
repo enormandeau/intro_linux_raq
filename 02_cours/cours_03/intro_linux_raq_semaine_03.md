@@ -625,14 +625,37 @@ suggestions en note pour tenter d'améliorer le cours.
 
 ## 6.1 - sed
 
+- Exercice (commande&nbsp;: **`cmd`**)
+- Exercice (commande&nbsp;: **`cmd`**)
+- Exercice (commande&nbsp;: **`cmd`**)
+- Exercice (commande&nbsp;: **`cmd`**)
+
 ## 6.2 - awk
+
+- Exercice (commande&nbsp;: **`cmd`**)
+- Exercice (commande&nbsp;: **`cmd`**)
+- Exercice (commande&nbsp;: **`cmd`**)
+- Exercice (commande&nbsp;: **`cmd`**)
 
 ## 6.3 - perl
 
+- Exercice (commande&nbsp;: **`cmd`**)
+- Exercice (commande&nbsp;: **`cmd`**)
+- Exercice (commande&nbsp;: **`cmd`**)
+- Exercice (commande&nbsp;: **`cmd`**)
+
 ## 6.4 - Expressions régulières
+
+- Exercice (commande&nbsp;: **`cmd`**)
+- Exercice (commande&nbsp;: **`cmd`**)
+- Exercice (commande&nbsp;: **`cmd`**)
+- Exercice (commande&nbsp;: **`cmd`**)
 
 ## 6.5 - Compression de fichiers
 
+- Exercice (commande&nbsp;: **`cmd`**)
+- Exercice (commande&nbsp;: **`cmd`**)
+- Exercice (commande&nbsp;: **`cmd`**)
 - Exercice (commande&nbsp;: **`cmd`**)
 
 
