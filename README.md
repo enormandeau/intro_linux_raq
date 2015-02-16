@@ -6,7 +6,7 @@ Aquatiques Québec** (RAQ) à l'hiver 2015.
 Les besoins en calculs en science, incluant en biologie et en bioinformatique,
 sont de plus en plus importants. Afin de pouvoir analyser ces quantités
 d'informations, il faut avoir accès à des ordinateurs dédiés et à des
-programmes d'analyses puissants. Depuis quelques décénies, ce genre de capacité
+programmes d'analyses puissants. Depuis quelques décennies, ce genre de capacité
 de calcul est disponible sur des serveurs de calculs UNIX ou, plus récemment,
 des serveurs Linux. De plus en plus, les logiciels d'analyse bioinformatique de
 pointe sont programmés pour être utiliser sur des systèmes UNIX-compatible,
