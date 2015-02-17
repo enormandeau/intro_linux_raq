@@ -1,4 +1,4 @@
-# Introduction à Linux RAQ - Cours 02
+# Introduction à Linux RAQ - Cours 03
 Eric Normandeau - 2015-02-17
 
 
@@ -15,11 +15,11 @@ Eric Normandeau - 2015-02-17
 
 # 1 - Introduction
 
-# 1.1 - Retour sur les exercices
+## 1.1 - Retour sur les exercices
 
 Réponse aux questions relatives aux exercices de la semaine passée.
 
-# 1.2 - Retour sur question avec séquences fasta
+## 1.2 - Retour sur question avec séquences fasta
 
 Nous souhaitons trouver toutes les séquences qui débutent par **`ATG`** dans le
 fichier **`sequences_wrapped.fasta`**. Nous utilisons la commande **`grep`**.
@@ -58,7 +58,7 @@ Finalement, nous allons retrouver le nom de ces séquences.
     grep -B 1 -E "^ATG" sequences_unwrapped.fasta | grep ">" | cut -c 2-
 ```
 
-# 1.2 - Importer le matériel du cours 03
+## 1.2 - Importer le matériel du cours 03
 
 Nous allons copier un dossier déjà préparé pour le cours 03 avec la commande
 **`cp`**, que nous allons revoir plus tard&nbsp;:
@@ -70,6 +70,9 @@ Nous allons copier un dossier déjà préparé pour le cours 03 avec la commande
 
 Toutes les commandes du cours utilisant des fichiers sont lancées à partir du
 dossier **`/home/username/cours_03/01_fichiers`**.
+
+
+\newpage
 
 
 # 2 - sed, awk et perl
@@ -298,6 +301,9 @@ car c'est grâce à elles que **`grep`**, **`sed`** et **`perl`** sont des
 commandes si puissantes.
 
 
+\newpage
+
+
 # 3 - Expressions régulières
 
 Les expressions régulières (souvent appelées *`regex`*) sont un mini langage
@@ -481,6 +487,9 @@ Google ou une feuille de référence sur les **`regex`** pour créer les patrons
 dont vous aurez besoin.
 
 
+\newpage
+
+
 # 4 - Compression de fichiers
 
 Les programmes **`gzip`**, **`zip`** et **`tar`** sont utilisés pour compresser
@@ -598,6 +607,9 @@ et qui remplace le **`c`** pour compresser.
 l'archive est décompressée !
 
 
+\newpage
+
+
 # 5 - Mot de la fin
 
 ## 5.1 - Aujourd'hui, nous avons vu&nbsp;:
@@ -701,6 +713,7 @@ Dans **`alice.txt`**, comme pour **`sed`** :
 - ... Effacer l'archive **`.zip`** (commande&nbsp;: **`rm`**)
 - ... Effacer la copie du dossier (commande&nbsp;: **`rm`**)
 
+
 \newpage
 
 
@@ -713,10 +726,10 @@ souvent utilisées&nbsp;:
 
 ## 7.1 - sed, awk et perl
 
-- **`sed`**&nbsp;: Rechercher et remplacer lignes **`[-n, -e, -f, -r]`**
-- **`awk`**&nbsp;: Extraire et modifier colonnes **`[-e, -f, -F]`**
+- **`sed`**&nbsp;: Rechercher et remplacer lignes **`[-n, -r]`**
+- **`awk`**&nbsp;: Extraire et modifier colonnes **`[-e, -F]`**
 - **`perl`**&nbsp;: Tout (c'est un langage de programmation complet) **`[-n,
-  -p, -e, -i]`**
+  -p, -e]`**
 
 ## 7.2 - Expressions régulières
 
@@ -728,5 +741,6 @@ Voir section 3
 - **`gunzip`**&nbsp;: Compresser des fichiers (GNU unzip) **`[-c]`**
 - **`zip`**&nbsp;: Compresser des fichiers ou dossiers **`[-r]`**
 - **`unzip`**&nbsp;: Compresser des fichiers ou dossiers
-- **`tar`**&nbsp;: Compresser/décompresser des fichiers et dossiers (tape archive) **`[x, c, v, f, z]`**
+- **`tar`**&nbsp;: Compresser/décompresser des fichiers et dossiers  
+  (tape archive) **`[x, c, v, f, z]`**
 

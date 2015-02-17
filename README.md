@@ -50,10 +50,8 @@ Document de cours :
 - Création de pipelines avec les commandes
 
 ## Semaine 3
-<!--
 Document de cours :
 [intro_linux_raq_semaine_03.pdf](https://github.com/enormandeau/intro_linux_raq/blob/master/02_cours/cours_03/intro_linux_raq_semaine_03.pdf?raw=true)
--->
 - Manipulation de texte avancée (**`perl`**, **`sed`**, **`awk`**)
 - Expressions régulières
 - Compression de fichiers (**`gzip/gunzip`**, **`zip/unzip`**, **`tar`**)
