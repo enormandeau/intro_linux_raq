@@ -1,5 +1,6 @@
 # Introduction à Linux RAQ - Cours 02
-Eric Normandeau - 2015-02-13
+Eric Normandeau - 2015-02-17
+
 
 # Plan de cours
 
@@ -29,7 +30,9 @@ fichier **`sequences_wrapped.fasta`**. Nous utilisons la commande **`grep`**.
 ```
 
 Malheureusement, les séquences sont repliées sur plusieurs lignes. Nous allons
-devoir les formater pour que chaque séquence soit sur une seule ligne.
+devoir les formater pour que chaque séquence soit sur une seule ligne. Pour
+cela, nous utilisons un script Python que j'ai écrit pour créer un fichier où
+les séquences ne prennent qu'une seule ligne.
 
 ```bash
     # Déplier les séquences (une ligne par séquence)
@@ -49,7 +52,9 @@ Finalement, nous allons retrouver le nom de ces séquences.
 ```bash
     # Trouver le nom des séquences
     grep -B 1 -E "^ATG" sequences_unwrapped.fasta 
+
     grep -B 1 -E "^ATG" sequences_unwrapped.fasta | grep ">"
+
     grep -B 1 -E "^ATG" sequences_unwrapped.fasta | grep ">" | cut -c 2-
 ```
 
@@ -78,7 +83,7 @@ permettent de rechercher et remplacer du texte et d'extraire des portions
 complexes mais même en utilisant seulement les bases, on peut faire beaucoup de
 choses. Nous allons voir **`sed`** mais dans la plupart des cas nous allons
 plutôt utiliser **`perl`** puisqu'il peut faire la même chose, ce qui nous rend
-la tâche plus facile car on n'a qu'un seul programme à apprendre.
+la tâche plus facile car on n'a qu'une seule syntaxe à apprendre.
 
 ## 2.1 - sed
 
@@ -103,7 +108,7 @@ Typiquement, nous allons utiliser **`sed`** pour&nbsp;:
     sed 's/Dodo/Extinct Bird/g' alice.txt
 
     # Pour voir le changement
-    sed 's/Dodo/Extinct Bird/' alice.txt | grep "Extinct Bird"
+    sed 's/Dodo/Extinct Bird/g' alice.txt | grep "Extinct Bird"
 ```
 
 Voici comment cette commande fonctionne. Premièrement, on donne le nom de la
@@ -111,15 +116,15 @@ commande **`sed`**, puis les options (il n'y en a pas dans cette commande),
 puis le code à exécuter par **`sed`** entre guillemets simples **`'`**. Dans ce
 code, la lettre **`s`** veut dire que nous allons chercher (*search*) du texte
 pour le remplacer. Le patron de base est le suivant&nbsp;:
-**`s/Search/Replace/`**. Entre les deux premiers symboles *`backslash`*
-(**`\`**), nous mettons le texte à chercher et entre les deux derniers
-*backslash* le texte pour remplacer. Finalement, la lettre **`g`** à la fin du
+**`s/Search/Replace/`**. Entre les deux premiers symboles *`slash`*
+(**`/`**), nous mettons le texte à chercher et entre les deux derniers
+*slash* le texte pour remplacer. Finalement, la lettre **`g`** à la fin du
 code veut dire *`greedy`* (ou avare), donc **`sed`** va tenter de remplacer le
 texte le plus grand nombre de fois possible par ligne.
 
 Nous pouvons obtenir le même effet sans utiliser le pipeline ni la commande
-**`grep`** si nous utilisons l'option **`-n`** (*no print*) et en ajoutant la
-lettre **`p`** (*print*) à la fin du code. Ainsi, seules les lignes qui on eu
+**`grep`** si nous utilisons l'option **`-n`** (*`no print`*) et en ajoutant la
+lettre **`p`** (*`print`*) à la fin du code. Ainsi, seules les lignes qui on eu
 du remplacement seront affichées.
 
 ```bash
@@ -179,14 +184,17 @@ allons utiliser **`awk`** pour&nbsp;:
 ### Extraire des colonnes
 
 ```bash
+    # Affichier fichier seeds_tabs.txt
+    cat seeds_tabs.txt
+
     # Extraire colonnes 1 et 3
-    awk '{print $1,$3}' seeds.txt
+    awk '{print $1,$3}' seeds_tabs.txt
 
     # Les séparer par une tabulation
-    awk '{print $1 "\t" $3}' seeds.txt
+    awk '{print $1 "\t" $3}' seeds_tabs.txt
 
     # Mettre la colonne 3 en premier
-    awk '{print $3 "\t" $1}' seeds.txt
+    awk '{print $3 "\t" $1}' seeds_tabs.txt
 
     # Spécifier le séparateur de colonnes
     awk -F";" '{print $1,$3}' seeds_semicolon.txt
@@ -196,7 +204,7 @@ allons utiliser **`awk`** pour&nbsp;:
 
 ```bash
     # Lignes avec 8 colonnes
-    awk 'NF = 8' seeds_incomplete.txt
+    awk 'NF == 8' seeds_incomplete.txt
 
     # Lignes avec au moins 7 colonnes
     awk 'NF >= 7' seeds_incomplete.txt
@@ -228,9 +236,6 @@ allons utiliser **`awk`** pour&nbsp;:
 
     # Moyenne d'une colonne
     awk '!/Area/{sum+=$1; n+=1} END {print sum/n}' seeds_tabs.txt
-
-    # Extraire texte entre deux marqueurs
-    awk '/START/,/STOP/' marker_file.txt
 ```
 
 La commande **`awk`** cache un puissant langage de manipulation de texte et de
@@ -314,9 +319,9 @@ débutant par **`\`** ou à l'aide d'un groupe de caractères entre crochets **`
 ]`**. Utiliser ces raccourcis permet d'écrire des expressions régulières plus
 courtes et parfois plus lisibles.
 
-- Mots : **`\w`** ou **`[A-Za-z_]`**. Inverse : **`\W`** ou **`[^A-Za-z_]`**
-- Alphabétique : **`[:alpha:]`** ou **`[A-Za-z]`**. Inverse : **`[^A-Za-z]`**
-- Espace, tabulation et fin de ligne : **`[:space:]`** ou **`\s`**. Inverse :
+- Mots : **`\w`** ou **`[A-Za-z0-9_]`**. Inverse : **`\W`** ou **`[^A-Za-z0-9_]`**
+- Alphabétique : **`[A-Za-z]`** ou **`[[:alpha:]]`**. Inverse : **`[^A-Za-z]`**
+- Espace, tabulation et fin de ligne : **`\s`** ou **`[[:space:]]`** . Inverse :
   **`\S`**
 - Nombres : **`\d`** ou **`[0-9]`**. Inverse : **`\D`** ou **`[^0-9]`**
 
@@ -588,6 +593,10 @@ Voici ce que les différentes options font :
 Les options sont les mêmes à l'exception de **`x`**, qui veut dire d'extraire
 et qui remplace le **`c`** pour compresser.
 
+**ATTENTION !** : Lorsqu'on décompresse un dossier ou un fichier, **`tar`** va
+écraser les fichiers ou dossiers du même nom qui se trouvent dans le dossier où
+l'archive est décompressée !
+
 
 # 5 - Mot de la fin
 
@@ -625,39 +634,72 @@ suggestions en note pour tenter d'améliorer le cours.
 
 ## 6.1 - sed
 
-- Exercice (commande&nbsp;: **`cmd`**)
-- Exercice (commande&nbsp;: **`cmd`**)
-- Exercice (commande&nbsp;: **`cmd`**)
-- Exercice (commande&nbsp;: **`cmd`**)
+Dans **`alice.txt** :
+
+- Rechercher **`Queen`** et remplacer par **`Lady`** (commande&nbsp;:
+**`sed`**)
+- ... Imprimer seulement les lignes où il y a eu un remplacement
+(commande&nbsp;: **`sed`**)
+- ... Faire seulement sur les 2000 premières lignes (commande&nbsp;: **`sed`**)
 
 ## 6.2 - awk
 
-- Exercice (commande&nbsp;: **`cmd`**)
-- Exercice (commande&nbsp;: **`cmd`**)
-- Exercice (commande&nbsp;: **`cmd`**)
-- Exercice (commande&nbsp;: **`cmd`**)
+Dans **`seeds_tabs.txt`** :
+
+- Extraire les colonnes 3, 4 et 5 (commande&nbsp;: **`awk`**)
+- ... Seulement quand la colonne 2 est supérieure à 15 (commande&nbsp;:
+**`awk`**)
+- Additionner les 3 premières colonnes sans imprimer la première ligne
+(commande&nbsp;: **`awk`**)
 
 ## 6.3 - perl
 
-- Exercice (commande&nbsp;: **`cmd`**)
-- Exercice (commande&nbsp;: **`cmd`**)
-- Exercice (commande&nbsp;: **`cmd`**)
-- Exercice (commande&nbsp;: **`cmd`**)
+Dans **`alice.txt`**, comme pour **`sed`** :
+
+- Rechercher **`Queen`** et remplacer par **`Lady`** (commande&nbsp;:
+**`perl`**)
+- ... Imprimer seulement les lignes où il y a eu un remplacement
+(commande&nbsp;: **`perl`**)
 
 ## 6.4 - Expressions régulières
 
-- Exercice (commande&nbsp;: **`cmd`**)
-- Exercice (commande&nbsp;: **`cmd`**)
+- Trouver les mots les plus fréquents qui se terminent en **`ing`** dans
+**`alice.txt`** (commande&nbsp;: **`grep`**, **`sort`**, **`uniq`**,
+**`head`**)
+- Trouver les mots de 8 lettres les plus communs (commande&nbsp;: **`grep`**,
+**`perl`**, **`awk`**, **`sort`**, **`uniq`**, **`head`**)
 - Exercice (commande&nbsp;: **`cmd`**)
 - Exercice (commande&nbsp;: **`cmd`**)
 
 ## 6.5 - Compression de fichiers
 
-- Exercice (commande&nbsp;: **`cmd`**)
-- Exercice (commande&nbsp;: **`cmd`**)
-- Exercice (commande&nbsp;: **`cmd`**)
-- Exercice (commande&nbsp;: **`cmd`**)
+### Avec gzip
 
+- Compresser le fichier **`alice.txt`** (commande&nbsp;: **`gzip`**)
+- Valider le changement (commande&nbsp;: **`ls`**)
+- ... Décompresser l'archive **`alice.txt`** (commande&nbsp;: **`gunzip`**)
+
+### Avec zip
+
+- Compresser le fichier **`alice.txt`** (commande&nbsp;: **`zip`**)
+- Valider le changement (commande&nbsp;: **`ls`**)
+- ... Décompresser l'archive **`alice.txt`** (commande&nbsp;: **`unzip`**)
+- ... Effacer l'archive **`.zip`** (commande&nbsp;: **`rm`**)
+- Compresser le dossier **`big_folder`** (commande&nbsp;: **`zip`**)
+- Valider le changement (commande&nbsp;: **`ls`**)
+- Renommer **`big_folder`** en **`big_folder_copy`** (commande&nbsp;: **`mv`**)
+- ... Décompresser l'archive (commande&nbsp;: **`unzip`**)
+- ... Effacer l'archive **`.zip`** (commande&nbsp;: **`rm`**)
+- ... Effacer la copie du dossier (commande&nbsp;: **`rm`**)
+
+### Avec tar
+
+- Compresser le dossier **`big_folder`** (commande&nbsp;: **`tar`**)
+- Valider le changement (commande&nbsp;: **`ls`**)
+- Renommer **`big_folder`** en **`big_folder_copy`** (commande&nbsp;: **`mv`**)
+- ... Décompresser l'archive (commande&nbsp;: **`tar`**)
+- ... Effacer l'archive **`.zip`** (commande&nbsp;: **`rm`**)
+- ... Effacer la copie du dossier (commande&nbsp;: **`rm`**)
 
 \newpage
 
@@ -675,4 +717,16 @@ souvent utilisées&nbsp;:
 - **`awk`**&nbsp;: Extraire et modifier colonnes **`[-e, -f, -F]`**
 - **`perl`**&nbsp;: Tout (c'est un langage de programmation complet) **`[-n,
   -p, -e, -i]`**
+
+## 7.2 - Expressions régulières
+
+Voir section 3
+
+## 7.3 - Compression de fichiers
+
+- **`gzip`**&nbsp;: Compresser des fichiers (GNU zip) **`[-c]`**
+- **`gunzip`**&nbsp;: Compresser des fichiers (GNU unzip) **`[-c]`**
+- **`zip`**&nbsp;: Compresser des fichiers ou dossiers **`[-r]`**
+- **`unzip`**&nbsp;: Compresser des fichiers ou dossiers
+- **`tar`**&nbsp;: Compresser/décompresser des fichiers et dossiers (tape archive) **`[x, c, v, f, z]`**
 
