@@ -86,6 +86,8 @@ les autres commandes.
 - Ajouter ~/bin courant au PATH
 - Y copier le script
 - Lancer le script
+
+- Analyse de base !
 - Exemple de script python pour montrer que c'est pareil
 
 Au fil du temps, on installe des programmes et on écrit des scripts qui nous
@@ -152,11 +154,11 @@ simples.
 
 ## 6.2 - Au prochain cours, nous verrons&nbsp;:
 
-- Les éditeurs de texte dans le terminal
-- Écrire des scripts bash / perl / python
-- Changer les permissions des fichiers
-- Créer des alias de commandes
-- screen et tmux
+- Transfert de données
+- Télécharger du terminal
+- Boucles for et autres trucs pour **`bash`**
+- Installation de programmes
+- Blasts
 
 ## 6.3 - Questions et suggestions
 
