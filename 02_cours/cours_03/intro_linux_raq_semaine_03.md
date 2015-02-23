@@ -1,5 +1,5 @@
 # Introduction à Linux RAQ - Cours 03
-Eric Normandeau - 2015-02-17
+Eric Normandeau - 2015-02-23
 
 
 # Plan de cours
@@ -680,8 +680,6 @@ Dans **`alice.txt`**, comme pour **`sed`** :
 **`head`**)
 - Trouver les mots de 8 lettres les plus communs (commande&nbsp;: **`grep`**,
 **`perl`**, **`awk`**, **`sort`**, **`uniq`**, **`head`**)
-- Exercice (commande&nbsp;: **`cmd`**)
-- Exercice (commande&nbsp;: **`cmd`**)
 
 ## 6.5 - Compression de fichiers
 
