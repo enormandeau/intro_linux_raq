@@ -64,7 +64,7 @@ Document de cours :
 - Permissions des fichiers et dossiers
 - Fichiers config .bashrc et .profile
 - Aliases
-- Tmux
+- Screen
 
 ## Semaine 5
 - Transfert de données
