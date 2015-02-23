@@ -700,9 +700,61 @@ suggestions en note pour tenter d'améliorer le cours.
 
 # 7 - Exercices
 
-## 7.1 - asdf
+## 7.1 - Éditeurs de texte
 
-- asdf (commande&nbsp;: **`cmd`**)
+- Créer et éditer un nouveau fichier nommé **`haiku.txt`** avec **`nano`**.
+- Taper le poème japonais suivant dans le fichier&nbsp;:
+
+```
+    Chaque fleur qui tombe
+    Fait vieillir d'avantage
+    Les branches du prunier
+```
+
+- Sauvegarder le fichier.
+- L'afficher avec la commande **`cat`**.
+- Réouvrir le fichier avec **`joe`**.
+- Ajouter l'auteur du poème : 
+
+```
+    - Yosa Buson (1716 - 1783)
+```
+
+- Sauvegarder et afficher avec la commande **`cat`**
+
+## 7.2 - Scripts
+
+- Écrire un script **`bash`** nommé **`print_haiku.sh`** qui prend deux
+  arguments (un nom de personne et un fichier contenant un haiku) et qui
+  imprime **`Bonjour <NOM>, voici un haiku:`**, suivi du poème. Voici un
+  exemple de son utilisation&nbsp;:
+
+```bash
+    ./print_haiku.sh Eric haiku.txt
+```
+
+- Installer le script dans votre dossier **`~/programmes`** et lancez le
+  sans avoir à spécifier le chemin du script (vous devrez quand même spécifier
+  le chemin vers le fichier texte).
+
+## 7.3 - Fichiers de configuration
+
+- Ajouter un alias **`haiku`** à la fin de votre fichier **`~/.bashrc`** qui
+  utilise votre nouveau script pour imprimer votre nom d'utilisateur (contenu
+  dans la variable **`$USER`**) et votre fichier de poème **`haiku`**.
+- Utiliser la commande **`source`** pour que le nouvel alias soit disponible.
+- Taper : **`haiku`** pour valider que l'alias fonctionne.
+
+## 7.4 - Screen
+
+- Créer une nouvelle instance de **`screen`** nommée **`cours04`**.
+- S'en déconnecter avec **`Ctrl-a d`**.
+- Créer une deuxième instance de **`screen`** nommée **`script`**.
+- S'en déconnecter avec **`Ctrl-a d`**.
+- Lister les instances existantes.
+- Se reconnecter à l'instance **`cours04`** et l'arrêter.
+- Se déconnecter du serveur et s'y reconnecter.
+- Se reconnecter à l'instance **`script`** et l'arrêter.
 
 
 \newpage
