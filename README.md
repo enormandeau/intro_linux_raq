@@ -57,6 +57,10 @@ Document de cours :
 - Compression de fichiers (**`gzip/gunzip`**, **`zip/unzip`**, **`tar`**)
 
 ## Semaine 4
+<!--
+Document de cours :
+[intro_linux_raq_semaine_04.pdf](https://github.com/enormandeau/intro_linux_raq/blob/master/02_cours/cours_04/intro_linux_raq_semaine_04.pdf?raw=true)
+-->
 - Éditeurs de textes (et formats de retour de ligne)
 - Écrire et lancer des scripts
 - Permissions des fichiers et dossiers
@@ -74,7 +78,6 @@ Document de cours :
 ## Semaine 6
 - Alignement de séquences
 - Parallel
-- Screen et Tmux
 
 ## Ressources
 - À venir

@@ -1,8 +1,8 @@
 # TODO
-- Créer cours 04
+- Écrire message pour IBIS et RAQ
 - Écrire exercices
 - Mettre PDF en ligne
-
-## Si temps
 - Ajouter des ressources au README.md
+- Trouver sujets supplémentaires pour cours 06
+- Commencer le cours 05
 
