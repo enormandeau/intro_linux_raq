@@ -33,7 +33,7 @@ l'ère de la génomique.
 
 # Plan de cours (sujet à changements)
 
-[Vidéos des cours](https://www.youtube.com/user/maroonedmorlock/videos) sur YouTube
+[Vidéos des cours](https://www.youtube.com/user/maroonedmorlock/videos?flow=grid&view=0&sort=da) sur YouTube
 
 ## Semaine 1
 Document de cours :
