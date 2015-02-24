@@ -33,6 +33,8 @@ l'ère de la génomique.
 
 # Plan de cours (sujet à changements)
 
+[Vidéos des cours](https://www.youtube.com/user/maroonedmorlock/videos) sur YouTube
+
 ## Semaine 1
 Document de cours :
 [intro_linux_raq_semaine_01.pdf](https://github.com/enormandeau/intro_linux_raq/blob/master/02_cours/cours_01/intro_linux_raq_semaine_01.pdf?raw=true)
