@@ -69,6 +69,10 @@ Document de cours :
 - Screen
 
 ## Semaine 5
+<!--
+Document de cours :
+[intro_linux_raq_semaine_05.pdf](https://github.com/enormandeau/intro_linux_raq/blob/master/02_cours/cours_05/intro_linux_raq_semaine_05.pdf?raw=true)
+-->
 - Transfert de données
 - Télécharger avec wget
 - Boucles for
