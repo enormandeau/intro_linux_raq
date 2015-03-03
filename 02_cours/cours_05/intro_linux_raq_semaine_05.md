@@ -107,6 +107,8 @@ dossier **`/home/username/cours_05/`**.
 # 5 - Boucles for et trucs bash
 
 - for i in 1 2 3; do echo $i; done
+- `cmd` and $(cmd)
+- while read i
 
 
 \newpage
