@@ -1,5 +1,5 @@
 # Introduction à Linux RAQ - Cours 05
-Eric Normandeau - 2015-02-27
+Eric Normandeau - 2015-03-03
 
 
 # Plan de cours
@@ -24,9 +24,32 @@ Il s'agit de l'avant dernier cours.
 
 Réponse aux questions relatives aux exercices de la semaine passée.
 
-- Haiku file
-- print_haiku.sh
-- haiku alias
+### Créer fichier haiku
+
+- Taper le texte suivant dans **`haiku.txt`** 
+
+```
+    Chaque fleur qui tombe
+    Fait vieillir d'avantage
+    Les branches du prunier
+
+    - Yosa Buson (1716 - 1783)
+```
+
+### Écrire script bash
+
+- **`print_haiku.sh <nom> <fichier>`**
+- Imprime **`Bonjour <nom>, voici un haiku:`**
+- Imprime ensuite le poême
+- Rendre exécutable
+- Installer dans dossier **`~/programmes`**
+
+### Créer alias
+
+- Créer un alias **`haiku`** dans **`~/.bashrc`**
+- Utilise **`print_haiku.sh`** et variable $USER
+- Source **`~/.bashrc`**
+- Tester l'alias
 
 ## 1.3 - Importer le matériel du cours 05
 
@@ -47,11 +70,24 @@ dossier **`/home/username/cours_05/`**.
 
 # 2 - Transfers et télécharger
 
+- scp from to
+- rsync -avzP from to
+- from to can be anywhere (like cp)
+- wget url
+- curl url
+- Créer fichier avec urls intéressants
+
 
 \newpage
 
 
 # 3 - Installation de programmes
+
+- joe
+- blast
+- ./configure; make; make install
+- modify path in ~/.profile
+- which
 
 
 \newpage
@@ -59,11 +95,18 @@ dossier **`/home/username/cours_05/`**.
 
 # 4 - Recherche de séquences similaires avec Blast
 
+- makeblastdb
+- blastn (blastx...)
+- formats 0 et 6
+- column -t
+
 
 \newpage
 
 
 # 5 - Boucles for et trucs bash
+
+- for i in 1 2 3; do echo $i; done
 
 
 \newpage
