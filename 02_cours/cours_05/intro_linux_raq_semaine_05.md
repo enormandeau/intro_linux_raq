@@ -8,7 +8,7 @@ Eric Normandeau - 2015-03-03
 1. Transfers et télécharger
 1. Installation de programmes
 1. Recherche de séquences similaires avec Blast
-1. Boucles for et trucs bash
+1. Boucles et trucs bash
 1. Mot de la fin
 1. Exercices
 1. Liste de commandes importantes
@@ -70,12 +70,25 @@ dossier **`/home/username/cours_05/`**.
 
 # 2 - Transfers et télécharger
 
-- scp from to
-- rsync -avzP from to
-- from to can be anywhere (like cp)
-- wget url
-- curl url
+## TODO
 - Créer fichier avec urls intéressants
+
+Il existe deux commandes principales pour transférer des données entre des
+ordinateurs Unix&nbsp;**`scp`** et **`rsync`**. Les deux s'utilisent de façon
+similaire à la commande **`cp`**. Les commandes **`wget`** et **`curl`**
+servent à télécharger des données à partir d'internet.
+
+## 2.1 - scp
+- From To
+- form here to server1
+- from server1 to here
+- from server1 to server2
+
+## 2.2 - rsync
+- From To
+- form here to server1
+- from server1 to here
+- from server1 to server2
 
 
 \newpage
@@ -83,11 +96,26 @@ dossier **`/home/username/cours_05/`**.
 
 # 3 - Installation de programmes
 
-- joe
-- blast
+Nous allons maintenant chacun installer la suite d'outils **`blastplus`** de
+NCBI. La procédure est similaire à ce que nous avons déjà fait pour installer
+nos scripts.
+
+## 3.1 - Télécharger
+- Utiliser **`wget`**
+
+## 3.2 - Décompresser
+- tar xvfz (ou B?)
+
+## 3.3 - Compiler
 - ./configure; make; make install
-- modify path in ~/.profile
-- which
+
+## 3.4 - Installer
+- make install (si --prefix=/home/$USER/programmes)
+- modify path in ~/.profile (si installé manuellement)
+
+## 3.5 - Vérifier l'installation
+- blastn -h
+- which blastn
 
 
 \newpage
@@ -95,8 +123,13 @@ dossier **`/home/username/cours_05/`**.
 
 # 4 - Recherche de séquences similaires avec Blast
 
+## 4.1 - Créer une base de données
 - makeblastdb
+
+## 4.2 - Lancer une recherche
 - blastn (blastx...)
+
+## 4.3 - Formats de sortie
 - formats 0 et 6
 - column -t
 
@@ -104,11 +137,16 @@ dossier **`/home/username/cours_05/`**.
 \newpage
 
 
-# 5 - Boucles for et trucs bash
+# 5 - Boucles et trucs bash
 
+## 5.1 - Boucle for
 - for i in 1 2 3; do echo $i; done
+
+## 5.2 - Boucle while
+- cat $file | while read i; do echo $i; done
+
+## 5.3 Utiliser la sortie d'une commande
 - `cmd` and $(cmd)
-- while read i
 
 
 \newpage
@@ -118,13 +156,16 @@ dossier **`/home/username/cours_05/`**.
 
 ## 6.1 - Aujourd'hui, nous avons vu&nbsp;:
 
-- Blah
+- Transfers et télécharger des fichiers et dossiers
+- Installer des programmes
+- Rechercher de séquences similaires avec Blast
+- Boucles et trucs bash
 
 Description
 
 ## 6.2 - Au prochain cours, nous verrons&nbsp;:
 
-- Blash
+- Est-ce qu'il y aura un prochain cours ?
 
 ## 6.3 - Questions et suggestions
 
