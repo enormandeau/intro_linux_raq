@@ -5,7 +5,7 @@ Eric Normandeau - 2015-03-03
 # Plan de cours
 
 1. Introduction
-1. Transfers et télécharger
+1. Transfers et téléchargements
 1. Installation de programmes
 1. Recherche de séquences similaires avec Blast
 1. Boucles et trucs bash
@@ -18,9 +18,16 @@ Eric Normandeau - 2015-03-03
 
 ## 1.1 - Annonces
 
-Il s'agit de l'avant dernier cours.
+Il s'agit du dernier cours.
 
-## 1.2 - Retour sur les exercices
+## 1.2 - Retour sur screen
+
+Certaines personnes ont eu de la difficulté avec **`screen`**. Une ces choses
+importantes à garder en tête est qu'il est préférable de sortir d'une session
+avant d'en créer une nouvelle. Sinon, on crée des sessions imbriquées une dans
+l'autre et il est plus difficile de s'y reconnecter.
+
+## 1.3 - Retour sur les exercices
 
 Réponse aux questions relatives aux exercices de la semaine passée.
 
@@ -40,7 +47,7 @@ Réponse aux questions relatives aux exercices de la semaine passée.
 
 - **`print_haiku.sh <nom> <fichier>`**
 - Imprime **`Bonjour <nom>, voici un haiku:`**
-- Imprime ensuite le poême
+- Imprime ensuite le poème
 - Rendre exécutable
 - Installer dans dossier **`~/programmes`**
 
@@ -51,7 +58,7 @@ Réponse aux questions relatives aux exercices de la semaine passée.
 - Source **`~/.bashrc`**
 - Tester l'alias
 
-## 1.3 - Importer le matériel du cours 05
+## 1.4 - Importer le matériel du cours 05
 
 Nous allons copier un dossier déjà préparé pour le cours 05 avec la commande
 **`cp`**, que nous allons revoir plus tard&nbsp;:
@@ -68,15 +75,15 @@ dossier **`/home/username/cours_05/`**.
 \newpage
 
 
-# 2 - Transfers et télécharger
+# 2 - Transfers et téléchargements
 
 ## TODO
-- Créer fichier avec urls intéressants
+- Créer fichier à transférer
 
 Il existe deux commandes principales pour transférer des données entre des
 ordinateurs Unix&nbsp;**`scp`** et **`rsync`**. Les deux s'utilisent de façon
 similaire à la commande **`cp`**. Les commandes **`wget`** et **`curl`**
-servent à télécharger des données à partir d'internet.
+servent à télécharger des données à partir d'Internet.
 
 ## 2.1 - scp
 - From To
@@ -90,6 +97,12 @@ servent à télécharger des données à partir d'internet.
 - from server1 to here
 - from server1 to server2
 
+## 2.3 - wget
+- Télécharger fichiers exemples en ligne
+  - programmes
+  - données
+  - ...
+
 
 \newpage
 
@@ -102,6 +115,8 @@ nos scripts.
 
 ## 3.1 - Télécharger
 - Utiliser **`wget`**
+- blastplus : ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.2.30+-x64-linux.tar.gz
+- joe : http://downloads.sourceforge.net/project/joe-editor/JOE%20sources/joe-3.7/joe-3.7.tar.gz
 
 ## 3.2 - Décompresser
 - tar xvfz (ou B?)
@@ -161,13 +176,11 @@ nos scripts.
 - Rechercher de séquences similaires avec Blast
 - Boucles et trucs bash
 
-Description
+Description TODO
 
-## 6.2 - Au prochain cours, nous verrons&nbsp;:
+C'était le dernier cours TODO
 
-- Est-ce qu'il y aura un prochain cours ?
-
-## 6.3 - Questions et suggestions
+## 6.2 - Questions et suggestions
 
 N'hésitez pas à me poser vos questions durant les cours ou par courriel. Je
 vais tenter d'y répondre durant les cours. Je vais aussi prendre vos

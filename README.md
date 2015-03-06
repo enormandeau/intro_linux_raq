@@ -65,6 +65,7 @@ Document de cours :
 - Écrire et lancer des scripts
 - Permissions des fichiers et dossiers
 - Fichiers config .bashrc et .profile
+
 - Aliases
 - Screen
 
@@ -73,15 +74,10 @@ Document de cours :
 Document de cours :
 [intro_linux_raq_semaine_05.pdf](https://github.com/enormandeau/intro_linux_raq/blob/master/02_cours/cours_05/intro_linux_raq_semaine_05.pdf?raw=true)
 -->
-- Transfert de données
-- Télécharger avec wget
-- Boucles for
+- Transfers et téléchargement
 - Installation de programmes
-- Blasts
-
-## Semaine 6
-- Alignement de séquences
-- Parallel
+- Recherche de séquences similaires avec Blasts
+- Boucles for et while
 
 ## Ressources
 - À venir
