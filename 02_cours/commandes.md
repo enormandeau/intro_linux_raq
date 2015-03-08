@@ -10,12 +10,11 @@ x ls
 x mkdir
 x mv
 x pwd
-- rename
 x rm
 x touch
 
 ## Permission and ownership
-- chmod
+x chmod
 - chown
 
 ## Text manipulation
@@ -23,65 +22,53 @@ x less
 x head
 x tail
 - diff
-- sort
-- uniq
+x sort
+x uniq
 x cat
-- cut
-- perl
-- grep
-- sed
-- awk
+x cut
+x perl
+x grep
+x sed
+x awk
 x wc
-- tr
 
 ## Text editors
-- nano
-- joe
-- vi
+x nano
+x joe
+x vi
 
 ## Compression
-- gunzip
-- unzip
-- gzip
-- tar
-
-## Math and programming
-- python
-- md5sum
-- bc
-- R
+x gunzip
+x unzip
+x gzip
+x tar
 
 ## Utility
 x history
 - passwd
-- screen
-- nohup
+x screen
 x clear (Ctrl-L)
-- tmux
-- sudo
-- su
-- ping
 x echo
-- time
+x time
 x date
 x man
-- who
-- for
+x for
+x while
 
 ## System
 - ifconfig
 - whereis
-- which
+x which
 x top
 - ps
 - df
 
 ## Connection and transfer
 x ssh
-- rsync
-- scp
-- wget
-- curl
+x rsync
+x scp
+x wget
+x curl
 
 ## Input/output redirection
 x > (redirect output to file)
