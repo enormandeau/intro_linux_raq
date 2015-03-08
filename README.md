@@ -65,7 +65,6 @@ Document de cours :
 - Écrire et lancer des scripts
 - Permissions des fichiers et dossiers
 - Fichiers config .bashrc et .profile
-
 - Aliases
 - Screen
 
