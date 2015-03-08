@@ -79,6 +79,3 @@ Document de cours :
 - Recherche de séquences similaires avec Blasts
 - Boucles for et while
 
-## Ressources
-- À venir
-
