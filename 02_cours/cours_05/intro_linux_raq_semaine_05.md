@@ -346,15 +346,59 @@ Les deux programmes semblent bien installés et nous pourrons les utiliser.
 
 # 4 - Recherche de séquences similaires avec Blast
 
+TODO Créer fichiers pour database et fichier à blaster (utiliser ADN env?)
+
 ## 4.1 - Créer une base de données
-- makeblastdb
+
+Afin d'utiliser **`blast`**, nous aurons besoin d'une base de données de
+séquences sur lesquelles faire notre recherche. La suite **`blastplus`**
+contient l'outil **`makeblastdb`** qui sert à créer une database à partir d'un
+fichier fasta.
+
+```bash
+    TODO commande makeblastdb
+```
 
 ## 4.2 - Lancer une recherche
-- blastn (blastx...)
+
+Maintenant que nous avons notre base de donnée de séquences sur lesquelles
+faire notre recherche, nous allons utiliser blast pour trouver quelles à
+séquences de la base de données nos séquences d'intérêt ressemblent. La suite
+**`blastplus`** contient plusieurs programmes pour chercher la similarité entre
+différent types de séquences. Comme nous avons des séquences nucléotidiques et
+que notre base de données contient elle aussi des séquences nucléotidiques,
+nous utiliserons **`blastn`**.
+
+```bash
+    TODO commande blastn
+```
 
 ## 4.3 - Formats de sortie
-- formats 0 et 6
-- column -t
+
+Les résultats de blast peuvent être formatés de différentes manières pour
+faciliter leur utilisation. Les formats les plus fréquemment utilisés sont les
+formats 0 et 6. Nous avons utilisé le format 0, qui est le format par défaut de
+blast. Il est plus long et montre les détails de l'allignement. On peut visualiser
+le résultat avec la commande **`less`**.
+
+```bash
+    TODO less RESULTS
+```
+
+Le format 6 est parfois plus intéressant car il est très bref et il est plus facile
+d'en extraire les informations essentielles.
+
+```bash
+    TODO blastn avec -outfmt 6
+```
+
+Combien de nos séquences d'intérêt sont similaires à une séquence de la base de
+données&nbsp;? Quelles sont les espèces représentées&nbsp;?
+
+```bash
+    # Nombre de nos séquences
+    TODO cut | sort -u | wc -l
+```
 
 
 \newpage
