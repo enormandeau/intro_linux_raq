@@ -1,5 +1,5 @@
 # Introduction à Linux RAQ - Cours 05
-Eric Normandeau - 2015-03-08
+Eric Normandeau - 2015-03-09
 
 
 # Plan de cours
@@ -77,9 +77,6 @@ dossier **`/home/username/cours_05/`**.
 
 # 2 - Transfers et téléchargements
 
-## TODO
-- Créer fichier à transférer
-
 Il existe deux commandes principales pour transférer des données entre des
 ordinateurs Unix&nbsp;**`scp`** et **`rsync`**. Les deux s'utilisent de façon
 similaire à la commande **`cp`**. Les commandes **`wget`** et **`curl`**
@@ -93,8 +90,9 @@ données, il est possible que le serveur vous demande de confirmer (en tapant
 
 ## 2.1 - scp
 
-La commande **`scp`**, pour *`secure copy`*, utilise le protocole **`ssh`** pour
-transférer les données. Ces données sont donc encodées durant le transfert.
+La commande **`scp`**, pour *`secure copy`*, utilise le protocole **`ssh`**
+pour transférer les données. Ces données sont donc encodées durant le
+transfert.
 
 ### Similaire à la commande cp
 
@@ -103,7 +101,7 @@ commande **`cp`**.
 
 ```bash
     cd
-    touch fichier
+    cp /cours_intro_linux/fichier.txt ~
     scp fichier copie_fichier
 ```
 
@@ -158,8 +156,8 @@ permissions des fichiers identiques. L'option **`v`** est pour *`verbose`*. La
 commande affichera des détails de son fonctionnement durant le transfert.
 L'option **`z`** veut dire de compresser les fichiers durant le transfert. Si
 les fichiers sont déjà compressés, elle n'est pas nécessaire. Finalement,
-l'option **`P`** veut dire à la fois *`partial`* et *`progress`*. La commande va
-conserver les fichiers qui on été partiellement transférés pour pouvoir
+l'option **`P`** veut dire à la fois *`partial`* et *`progress`*. La commande
+va conserver les fichiers qui on été partiellement transférés pour pouvoir
 relancer le transfert exactement là où il était rendu et elle va afficher le
 progrès de transfert de chaque fichier.
 
@@ -203,15 +201,15 @@ le contenu, tous les dossiers et fichiers du dossier à transférer seront plac�
 librement (pas contenu dans un dossier) dans le dossier de destination. Ceci
 peut être embêtant si le dossier contenait un grand nombre de fichiers.
 
+
 ```bash
     # Pour transférer le dossier et son contenu
-    rsync -avzP dossier/ Destination
+    rsync -avzP /cours_intro_linux/dossier_avec_100_fichiers Destination
 
-    # Pour transférer seulement le contenu
-    rsync -avzP dossier Destination
+    # Pour transférer seulement le contenu (ajouté un /)
+    rm -r ~/dossier_avec_100_fichiers
+    rsync -avzP /cours_intro_linux/dossier_avec_100_fichiers/ Destination
 ```
-
-## TODO Créer un dossier avec pleins de fichiers à transférer
 
 ## 2.3 - wget
 
@@ -346,7 +344,7 @@ Les deux programmes semblent bien installés et nous pourrons les utiliser.
 
 # 4 - Recherche de séquences similaires avec Blast
 
-TODO Créer fichiers pour database et fichier à blaster (utiliser ADN env?)
+Les utilitaires de la 
 
 ## 4.1 - Créer une base de données
 
@@ -356,7 +354,9 @@ contient l'outil **`makeblastdb`** qui sert à créer une database à partir d'u
 fichier fasta.
 
 ```bash
-    TODO commande makeblastdb
+    # Créer la database
+    makeblastdb -in coi_especes_quebecoises.fasta -title coi \
+        -dbtype nucl -out ./blast_databases/coi
 ```
 
 ## 4.2 - Lancer une recherche
@@ -370,7 +370,9 @@ que notre base de données contient elle aussi des séquences nucléotidiques,
 nous utiliserons **`blastn`**.
 
 ```bash
-    TODO commande blastn
+    # Lancer le blast
+    blastn -db ./blast_databases/coi -query sequences_mystere_12.fasta \
+        -evalue 1e-10 -outfmt 0 -max_target_seqs 1 > sequences_mystere_12.coi0
 ```
 
 ## 4.3 - Formats de sortie
@@ -378,18 +380,26 @@ nous utiliserons **`blastn`**.
 Les résultats de blast peuvent être formatés de différentes manières pour
 faciliter leur utilisation. Les formats les plus fréquemment utilisés sont les
 formats 0 et 6. Nous avons utilisé le format 0, qui est le format par défaut de
-blast. Il est plus long et montre les détails de l'allignement. On peut visualiser
-le résultat avec la commande **`less`**.
+blast. Il est plus long et montre les détails de l'allignement. On peut
+visualiser le résultat avec la commande **`less`**.
 
 ```bash
-    TODO less RESULTS
+    less sequences_mystere_12.coi0
 ```
 
-Le format 6 est parfois plus intéressant car il est très bref et il est plus facile
-d'en extraire les informations essentielles.
+Le format 6 est parfois plus intéressant car il est très bref et il est plus
+facile d'en extraire les informations essentielles.
 
 ```bash
-    TODO blastn avec -outfmt 6
+    # Lancer le blast
+    blastn -db ./blast_databases/coi -query sequences_mystere_12.fasta \
+        -evalue 1e-10 -outfmt 6 -max_target_seqs 1 > sequences_mystere_12.coi6
+
+    # Visualiser le format de sortie
+    cat sequences_mystere_12.coi6
+
+    # Reformater pour mieux voir
+    column -t sequences_mystere_12.coi6
 ```
 
 Combien de nos séquences d'intérêt sont similaires à une séquence de la base de
@@ -397,7 +407,7 @@ données&nbsp;? Quelles sont les espèces représentées&nbsp;?
 
 ```bash
     # Nombre de nos séquences
-    TODO cut | sort -u | wc -l
+    cut -f 2 sequences_mystere_12.coi6 | cut -d "|" -f 1 | sort | uniq -c
 ```
 
 
@@ -406,14 +416,34 @@ données&nbsp;? Quelles sont les espèces représentées&nbsp;?
 
 # 5 - Boucles et trucs bash
 
+Il est utile de pouvoir lancer une commande ou un script sur un ensemble de
+fichiers. Une des façons de faire est d'utiliser une boucle et de traiter
+chaque fichier un après l'autre.
+
 ## 5.1 - Boucle for
 - for i in 1 2 3; do echo $i; done
 
 ## 5.2 - Boucle while
-- cat $file | while read i; do echo $i; done
+
+Nous allons chercher les mots présents dans le fichier **`mots.txt`** dans le
+fichier **`alice.txt`** et afficher leur compte.
+
+```bash
+    cat mots.txt | while read i; do \
+        echo -ne "$i:\t"; grep -o "$i" alice.txt | wc -l; done
+```
 
 ## 5.3 Utiliser la sortie d'une commande
 - `cmd` and $(cmd)
+
+```bash
+    # Utilisé dans echo
+    cat mots.txt | while read i; do \
+        echo -e "$i:\t$(grep -o "$i" alice.txt | wc -l)"; done
+
+    # Utilisé pour initialiser un boucle
+    for i in $(seq 10); do echo "$i hyppopotame(s)"; sleep 1; done
+```
 
 
 \newpage
@@ -428,15 +458,16 @@ données&nbsp;? Quelles sont les espèces représentées&nbsp;?
 - Rechercher de séquences similaires avec Blast
 - Boucles et trucs bash
 
-Description TODO
-
-C'était le dernier cours TODO
+Il s'agissait du dernier cours de la série d'introduction à Linux. Je crois que
+vous aurez apris les bases de l'utilisation du terminal et que vous serez prêts
+à mieux utiliser les ressources de calcul qui sont à votre disposition.
 
 ## 6.2 - Questions et suggestions
 
 N'hésitez pas à me poser vos questions durant les cours ou par courriel. Je
 vais tenter d'y répondre durant les cours. Je vais aussi prendre vos
-suggestions en note pour tenter d'améliorer le cours.
+suggestions en note pour tenter d'améliorer les cours que je donnerai dans le
+future.
 
 
 \newpage
