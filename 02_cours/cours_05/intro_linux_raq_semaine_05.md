@@ -77,8 +77,8 @@ dossier **`/home/username/cours_05/`**.
 # 2 - Transfers et téléchargements
 
 Il existe deux commandes principales pour transférer des données entre des
-ordinateurs UNIX&nbsp;: **`scp`** et **`rsync`**. Les deux s'utilisent de façon
-similaire à la commande **`cp`**. Les commandes **`wget`** et **`curl`**
+ordinateurs UNIX&nbsp;: **`scp`** et **`rsync`**. Les deux s'utilisent de
+façon similaire à la commande **`cp`**. Les commandes **`wget`** et **`curl`**
 servent à télécharger des données à partir d'Internet.
 
 Dans cette section, nous allons simuler le transfert entre serveurs puisque
@@ -159,10 +159,10 @@ permissions des fichiers identiques. L'option **`v`** est pour *`verbose`*. La
 commande affichera des détails de son fonctionnement durant le transfert.
 L'option **`z`** veut dire de compresser les fichiers durant le transfert. Si
 les fichiers sont déjà compressés, elle n'est pas nécessaire. Finalement,
-l'option **`P`** veut dire à la fois *`partial`* et *`progress`*. La commande
-va conserver les fichiers qui on été partiellement transférés pour pouvoir
-relancer le transfert exactement là où il était rendu et elle va afficher le
-progrès de transfert de chaque fichier.
+l'option **`P`** veut dire à la fois *`partial`* et *`progress`*. La commande va
+conserver les fichiers qui on été partiellement transférés pour pouvoir relancer
+le transfert exactement là où il était rendu et elle va afficher le progrès de
+transfert de chaque fichier.
 
 ### D'ici vers un autre serveur
 
@@ -234,14 +234,11 @@ La commande **`curl`** a largement été remplacée par **`wget`** mais il est
 possible que vous la rencontriez à l'occasion.
 
 
-\newpage
-
-
 # 3 - Installation de programmes
 
 Nous allons maintenant chacun installer la suite d'outils **`blastplus`** de
-NCBI. Nous allons également installer notre propre version de l'éditeur de
-texte **`joe`**. La procédure est similaire à ce que nous avons déjà fait pour
+NCBI. Nous allons également installer notre propre version de l'éditeur de texte
+**`joe`**. La procédure est similaire à ce que nous avons déjà fait pour
 installer nos scripts.
 
 ## 3.1 - Télécharger
@@ -276,10 +273,10 @@ archives.
 
 Certains programmes, comme **`joe`**, on besoin d'être compilés pour être
 installés. La compilation crée des fichiers exécutables qu'on peut par la suite
-utiliser. D'autre programmes viennent avec des fichier exécutables déjà
-compilés pour plusieurs plateformes. C'est le cas de **`blastplus`**. Il suffit
-alors de choisir les exécutables qui conviennent à l'ordinateur où nous
-souhaitons installer le programme.
+utiliser. D'autre programmes viennent avec des fichier exécutables déjà compilés
+pour plusieurs plateformes. C'est le cas de **`blastplus`**. Il suffit alors de
+choisir les exécutables qui conviennent à l'ordinateur où nous souhaitons
+installer le programme.
 
 ```bash
     # Aller dans le dossier décompressé
@@ -342,9 +339,6 @@ tester si on peut les lancer.
 Les deux programmes semblent bien installés et nous pourrons les utiliser.
 
 
-\newpage
-
-
 # 4 - Recherche de séquences similaires avec Blast
 
 Les utilitaires de la suite **`blastplus`** permettent de rechercher des
@@ -366,13 +360,13 @@ fichier fasta.
 
 ## 4.2 - Lancer une recherche
 
-Maintenant que nous avons notre base de donnée de séquences sur lesquelles
-faire notre recherche, nous allons utiliser blast pour trouver quelles à
-séquences de la base de données nos séquences d'intérêt ressemblent. La suite
-**`blastplus`** contient plusieurs programmes pour chercher la similarité entre
-différent types de séquences. Comme nous avons des séquences nucléotidiques et
-que notre base de données contient elle aussi des séquences nucléotidiques,
-nous utiliserons **`blastn`**.
+Maintenant que nous avons notre base de donnée de séquences sur lesquelles faire
+notre recherche, nous allons utiliser blast pour trouver quelles à séquences de
+la base de données nos séquences d'intérêt ressemblent. La suite **`blastplus`**
+contient plusieurs programmes pour chercher la similarité entre différent types
+de séquences. Comme nous avons des séquences nucléotidiques et que notre base de
+données contient elle aussi des séquences nucléotidiques, nous utiliserons
+**`blastn`**.
 
 ```bash
     # Lancer le blast
@@ -428,8 +422,8 @@ base de données&nbsp;? Quelles sont les espèces représentées&nbsp;?
 # 5 - Boucles et trucs bash
 
 Il est utile de pouvoir lancer une commande ou un script sur un ensemble de
-fichiers. Une des façons de faire est d'utiliser une boucle et de traiter
-chaque fichier un après l'autre.
+fichiers. Une des façons de faire est d'utiliser une boucle et de traiter chaque
+fichier un après l'autre.
 
 ## 5.1 - Boucle for
 
@@ -457,7 +451,11 @@ fichier **`alice.txt`** et afficher leur compte.
 ```
 
 ## 5.3 Utiliser la sortie d'une commande
-- `cmd` and $(cmd)
+
+Il est parfois utile d'insérer la sortie d'une commande directement dans une
+autre commande. Le terminal **`bash`** accepte deux syntaxe (**\`cmd\`** et
+**`$(cmd)`**). Cependant, la deuxième est de loin préférée car elle est plus
+facile à lire et on peut imbriquer plusieurs niveaux un dans l'autre.
 
 ```bash
     # Utilisé dans echo
@@ -481,16 +479,15 @@ fichier **`alice.txt`** et afficher leur compte.
 - Rechercher de séquences similaires avec Blast
 - Boucles et trucs bash
 
-Il s'agissait du dernier cours de la série d'introduction à Linux. Je crois que
-vous aurez appris les bases de l'utilisation du terminal et que vous serez prêts
-à mieux utiliser les ressources de calcul qui sont à votre disposition.
+Il s'agissait du dernier cours de la série d'introduction à Linux. Vous aurez
+appris les bases de l'utilisation du terminal et vous serez prêts à mieux
+utiliser les ressources de calcul qui sont à votre disposition.
 
 ## 6.2 - Questions et suggestions
 
-N'hésitez pas à me poser vos questions durant les cours ou par courriel. Je
-vais tenter d'y répondre durant les cours. Je vais aussi prendre vos
-suggestions en note pour tenter d'améliorer les cours que je donnerai dans le
-future.
+N'hésitez pas à me poser vos questions durant les cours ou par courriel. Je vais
+tenter d'y répondre durant les cours. Je vais aussi prendre vos suggestions en
+note pour tenter d'améliorer les cours que je donnerai dans le future.
 
 
 \newpage
@@ -503,7 +500,16 @@ parenthèses, vous trouverez le nom en anglais de la commande (pour vous aider �
 retenir la commande). Entre crochets, vous trouverez les options les plus
 souvent utilisées&nbsp;:
 
-## 7.1 - blah
-
-- **`cmd`**&nbsp;: Description. **`[options]`**
+- **`scp`**&nbsp;: Copier des fichiers d'un serveur à un autre. **`[-r]`**
+- **`rsync`**&nbsp;: Copier des fichiers d'un serveur à un autre. **`[-avzP]`**
+- **`wget`**&nbsp;: Télécharger des fichiers.
+- **`curl`**&nbsp;: Télécharger des fichiers.
+- **`make`**&nbsp;: Compiler certains programmes.
+- **`makeblastdb`**&nbsp;: Créer une base de données blast. **`[--help]`**
+- **`blastn`**&nbsp;: Faire une recherche de similarité entre séquences.
+  **`[--help]`**
+- **`for`**&nbsp;: Faire un boucle.
+- **`while`**&nbsp;: Faire un boucle.
+- **`$(cmd)`**&nbsp;: Extraire la sortie d'une commande.
+- **\`cmd\`**&nbsp;: Extraire la sortie d'une commande.
 
