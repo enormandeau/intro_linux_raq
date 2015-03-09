@@ -10,7 +10,6 @@ Eric Normandeau - 2015-03-09
 1. Recherche de séquences similaires avec Blast
 1. Boucles et trucs bash
 1. Mot de la fin
-1. Exercices
 1. Liste de commandes importantes
 
 
@@ -18,11 +17,11 @@ Eric Normandeau - 2015-03-09
 
 ## 1.1 - Annonces
 
-Il s'agit du dernier cours.
+Le cours d'aujourd'hui sera le dernier de la série d'introduction à Linux.
 
 ## 1.2 - Retour sur screen
 
-Certaines personnes ont eu de la difficulté avec **`screen`**. Une ces choses
+Certaines personnes ont eu de la difficulté avec **`screen`**. Une des choses
 importantes à garder en tête est qu'il est préférable de sortir d'une session
 avant d'en créer une nouvelle. Sinon, on crée des sessions imbriquées une dans
 l'autre et il est plus difficile de s'y reconnecter.
@@ -78,7 +77,7 @@ dossier **`/home/username/cours_05/`**.
 # 2 - Transfers et téléchargements
 
 Il existe deux commandes principales pour transférer des données entre des
-ordinateurs Unix&nbsp;**`scp`** et **`rsync`**. Les deux s'utilisent de façon
+ordinateurs UNIX&nbsp;: **`scp`** et **`rsync`**. Les deux s'utilisent de façon
 similaire à la commande **`cp`**. Les commandes **`wget`** et **`curl`**
 servent à télécharger des données à partir d'Internet.
 
@@ -110,6 +109,8 @@ commande **`cp`**.
 La différence est que la source, la destination, ou même les deux, peuvent se
 trouver sur des serveurs à distance.
 
+### D'ici vers un autre serveur
+
 ```bash
     # Effacer le fichier copie
     rm copie_fichier
@@ -120,6 +121,8 @@ trouver sur des serveurs à distance.
     # Ou
     scp fichier user31@raq.ibis.ulaval.ca:~/copie_fichier
 ```
+
+### D'un autre serveur vers ici
 
 ```bash
     # Effacer le fichier copie
@@ -139,10 +142,10 @@ chemin du fichier sur le serveur.
 ## 2.2 - rsync
 
 La commande **`rsync`** joue le même rôle que la commande **`scp`** mais ajoute
-des foncionnalités intéressantes. Par exemple, on peut demander à ce que les
+des fonctionnalités intéressantes. Par exemple, on peut demander à ce que les
 données soient compressées durant le transfert, ce qui réduit le temps de
-transfert de larges fichiers non-compressés. La commande **`rsync`** est
-également capaple de reprendre le transfert là où il était rendu en cas
+transfert de larges fichiers non compressés. La commande **`rsync`** est
+également capable de reprendre le transfert là où il était rendu en cas
 d'interruption accidentelle ou volontaire.
 
 ### Options à toujours utiliser
@@ -344,7 +347,9 @@ Les deux programmes semblent bien installés et nous pourrons les utiliser.
 
 # 4 - Recherche de séquences similaires avec Blast
 
-Les utilitaires de la 
+Les utilitaires de la suite **`blastplus`** permettent de rechercher des
+séquences qui se resemble. On peut ainsi trouver à quel gène notre séquence
+correspond ou de quelle espèce elle provient.
 
 ## 4.1 - Créer une base de données
 
@@ -380,7 +385,7 @@ nous utiliserons **`blastn`**.
 Les résultats de blast peuvent être formatés de différentes manières pour
 faciliter leur utilisation. Les formats les plus fréquemment utilisés sont les
 formats 0 et 6. Nous avons utilisé le format 0, qui est le format par défaut de
-blast. Il est plus long et montre les détails de l'allignement. On peut
+blast. Il est plus long et montre les détails de l'alignement. On peut
 visualiser le résultat avec la commande **`less`**.
 
 ```bash
@@ -402,11 +407,17 @@ facile d'en extraire les informations essentielles.
     column -t sequences_mystere_12.coi6
 ```
 
-Combien de nos séquences d'intérêt sont similaires à une séquence de la base de
-données&nbsp;? Quelles sont les espèces représentées&nbsp;?
+Est-ce que toutes nos séquences d'intérêt sont similaires à une séquence de la
+base de données&nbsp;? Quelles sont les espèces représentées&nbsp;?
 
 ```bash
-    # Nombre de nos séquences
+    # Nombre de séquences mystère
+    grep -c ">" sequences_mystere_12.fasta
+
+    # Nombre de séquences qui blastent
+    wc -l sequences_mystere_12.coi6
+
+    # Décompte par espèce
     cut -f 2 sequences_mystere_12.coi6 | cut -d "|" -f 1 | sort | uniq -c
 ```
 
@@ -421,7 +432,19 @@ fichiers. Une des façons de faire est d'utiliser une boucle et de traiter
 chaque fichier un après l'autre.
 
 ## 5.1 - Boucle for
-- for i in 1 2 3; do echo $i; done
+
+La syntaxe générale d'une boucle est la suivante :
+
+```bash
+    for i in ITEMS; do ACTION; done
+```
+
+Par exemple, pour afficher les items de la série **`1 2 3`**, on peut lancer la
+boucle suivante.
+
+```bash
+    for i in 1 2 3; do echo $i; done
+```
 
 ## 5.2 - Boucle while
 
@@ -442,7 +465,7 @@ fichier **`alice.txt`** et afficher leur compte.
         echo -e "$i:\t$(grep -o "$i" alice.txt | wc -l)"; done
 
     # Utilisé pour initialiser un boucle
-    for i in $(seq 10); do echo "$i hyppopotame(s)"; sleep 1; done
+    for i in $(seq 10); do echo "$i seconde(s)"; sleep 1; done
 ```
 
 
@@ -459,7 +482,7 @@ fichier **`alice.txt`** et afficher leur compte.
 - Boucles et trucs bash
 
 Il s'agissait du dernier cours de la série d'introduction à Linux. Je crois que
-vous aurez apris les bases de l'utilisation du terminal et que vous serez prêts
+vous aurez appris les bases de l'utilisation du terminal et que vous serez prêts
 à mieux utiliser les ressources de calcul qui sont à votre disposition.
 
 ## 6.2 - Questions et suggestions
@@ -473,24 +496,14 @@ future.
 \newpage
 
 
-# 7 - Exercices
-
-## 7.1 - Blah
-
-- Blah
-
-
-\newpage
-
-
-# 8 - Liste de commandes importantes
+# 7 - Liste de commandes importantes
 
 Voici une courte liste des commandes que nous avons utilisée aujourd'hui. Entre
 parenthèses, vous trouverez le nom en anglais de la commande (pour vous aider à
 retenir la commande). Entre crochets, vous trouverez les options les plus
 souvent utilisées&nbsp;:
 
-## 8.1 - blah
+## 7.1 - blah
 
 - **`cmd`**&nbsp;: Description. **`[options]`**
 
